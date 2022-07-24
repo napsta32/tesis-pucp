@@ -5,6 +5,7 @@ services:
     image: fpena_preprocessing
     build: ./
     restart: "never"
+    command: /app/scripts/preprocess.sh
     volumes:
       - h36m:/data/h36m
 

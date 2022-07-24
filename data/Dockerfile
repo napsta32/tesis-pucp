@@ -1,3 +1,5 @@
-FROM python:3.8
+FROM bash
 
-RUN ls /data
+COPY . /app/
+
+RUN chmod +x ./scripts/preprocess.sh
