@@ -3,7 +3,7 @@ version: "3"
 services:
   fpena_preprocessing_db:
     image: fpena_preprocessing_db
-    build: ../db/preprocessing
+    build: .
     restart: "always"
     networks:
       - database_network
