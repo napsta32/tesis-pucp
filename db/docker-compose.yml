@@ -13,8 +13,6 @@ services:
       - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
 
 volumes:
-  h36m:
-    external: true
   fpena_preprocessing_db_data:
 
 networks:

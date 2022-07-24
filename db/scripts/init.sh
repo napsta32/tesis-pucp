@@ -1,6 +1,9 @@
 #! /bin/bash
 
-if [[ $(docker network ls --filter name="fpena_preprocessing_db_data" -q) ]]
+if [[ $(docker network ls --filter name="fpena_database_network" -q) ]]
 then
-    docker network create fpena_preprocessing_db_data
+    echo "Creating docker network"
+    docker network create fpena_database_network
 fi
+
+echo "database initialization ready"
