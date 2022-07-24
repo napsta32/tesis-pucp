@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  fpena_preprocessing:
+    image: fpena_preprocessing
+    build: ./
+    restart: "never"
+    ports:
+    volumes:
+      - h36m:/data/h36m
+
+volumes:
+  h36m:
+    external: true
