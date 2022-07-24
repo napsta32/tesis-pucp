@@ -5,7 +5,6 @@ services:
     image: fpena_preprocessing
     build: ./
     restart: "never"
-    ports:
     volumes:
       - h36m:/data/h36m
 
