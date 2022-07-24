@@ -1,5 +1,6 @@
 FROM bash
 
+WORKDIR /app
 COPY . /app/
 
-RUN chmod +x ./scripts/preprocess.sh
+RUN chmod +x /app/scripts/preprocess.sh
