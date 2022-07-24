@@ -1,7 +1,7 @@
 # FROM alpine
 FROM bash
 
-# RUN apk add --update nodejs npm ffmpeg
+# RUN apk add --update nodejs npm ffmpeg git
 
 # Install global tooling
 # RUN npm install --global zx
