@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  fpena_preprocessing_db:
+    image: fpena_preprocessing_db
+    build: ../db/preprocessing
+    restart: "always"
+    networks:
+      - database_network
+    volumes:
+      - fpena_preprocessing_db_data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+
+volumes:
+  h36m:
+    external: true
+  fpena_preprocessing_db_data:
+
+networks:
+  fpena_database_network:
+    external: true
