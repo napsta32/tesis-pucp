@@ -1,6 +1,17 @@
 version: "3"
 
 services:
+  fpena_file_manager_server:
+    image: fpena_file_manager_server
+    build: ./file-manager-server
+    restart: "always"
+    networks:
+      - fpena_database_network
+    environment:
+      - DB_HOST="fpena_preprocessing_db"
+      - DB_PORT=3306
+      - DB_USER="root"
+      - DB_PASSWORD=${DB_PASSWORD}
   fpena_preprocessing_db:
     image: fpena_preprocessing_db
     build: .
@@ -8,12 +19,13 @@ services:
     networks:
       - fpena_database_network
     volumes:
-      - fpena_preprocessing_db_data:/var/lib/mysql
+      - fpena_preprocessing_db_data_v2:/var/lib/mysql
     environment:
       - MARIADB_ROOT_PASSWORD=${DB_PASSWORD}
 
 volumes:
   fpena_preprocessing_db_data:
+  fpena_preprocessing_db_data_v2:
 
 networks:
   fpena_database_network:
