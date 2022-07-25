@@ -1,3 +1,3 @@
-FROM mysql:8.0.29
+FROM mariadb:10.7
 
 COPY ./docker-entrypoint-initdb.d /docker-entrypoint-initdb.d

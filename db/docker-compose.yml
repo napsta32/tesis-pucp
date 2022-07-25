@@ -10,7 +10,7 @@ services:
     volumes:
       - fpena_preprocessing_db_data:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+      - MARIADB_ROOT_PASSWORD=${DB_PASSWORD}
 
 volumes:
   fpena_preprocessing_db_data:
