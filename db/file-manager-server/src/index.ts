@@ -31,6 +31,9 @@ const server = app.listen(port, () => {
     console.log(`⚡️[server]: Server is running at ${host}:${port}`);
 });
 
+export async function waitForDatabase() {
+    return await getDataSource();
+}
 export async function destroyServer() {
     await new Promise((resolve, reject) => {
         server.close((err) => {
