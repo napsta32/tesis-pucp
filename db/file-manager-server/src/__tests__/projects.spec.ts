@@ -8,7 +8,3 @@ describe('test something', () => {
         expect(res.status).toEqual(200);
     });
 });
-
-afterAll(async ()=> {
-    await AppDataSource.destroy();
-});

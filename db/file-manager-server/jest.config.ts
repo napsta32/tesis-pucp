@@ -14,6 +14,7 @@ const config: Config.InitialOptions = {
         }
     },
     rootDir: 'src',
-    detectOpenHandles: true
+    detectOpenHandles: true,
+    globalTeardown: 'test-global-teardown.ts'
 };
 export default config;
