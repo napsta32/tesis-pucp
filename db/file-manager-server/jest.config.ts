@@ -14,6 +14,8 @@ const config: Config.InitialOptions = {
     coverageDirectory: 'reports/coverage',
     coverageThreshold: {
         global: {
+            branches: 80,
+            functions: 80,
             lines: 80
         },
         './src/api': {
