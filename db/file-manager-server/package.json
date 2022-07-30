@@ -10,7 +10,7 @@
 		"prettier": "prettier --check ./**/*.json",
 		"prettier-fix": "prettier --write ./**/*.json",
 		"typeorm": "typeorm-ts-node-commonjs",
-		"test": "jest"
+		"test": "ts-jest"
 	},
 	"dependencies": {
 		"dotenv": "^16.0.1",
