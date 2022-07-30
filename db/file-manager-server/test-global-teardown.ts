@@ -1,4 +1,4 @@
-import server from '.';
+import server from './src';
 
 export default function () {
     afterAll(async () => {
