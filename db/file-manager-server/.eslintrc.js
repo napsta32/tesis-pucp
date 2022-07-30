@@ -8,6 +8,8 @@ module.exports = {
     rules: {
         indent: ['error', 4],
 
+        'eol-last': ['error', 'always'],
+
         semi: ['error'],
 
         'comma-dangle': ['error', 'never'],
