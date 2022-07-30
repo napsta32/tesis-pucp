@@ -29,7 +29,7 @@ services:
     networks:
       - fpena_database_network
     volumes:
-      - fpena_preprocessing_db_data_v2:/var/lib/mysql
+      - fpena_preprocessing_db_data_v3:/var/lib/mysql
     environment:
       - MARIADB_ROOT_PASSWORD=${DB_PASSWORD}
       - MARIADB_DATABASE=file_manager_db
@@ -39,6 +39,7 @@ services:
 volumes:
   fpena_preprocessing_db_data:
   fpena_preprocessing_db_data_v2:
+  fpena_preprocessing_db_data_v3:
 
 networks:
   fpena_database_network:
