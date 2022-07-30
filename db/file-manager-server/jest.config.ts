@@ -4,8 +4,14 @@ import type {Config} from '@jest/types';
 const config: Config.InitialOptions = {
     preset: 'ts-jest',
     testEnvironment: 'node',
+    reporters: [
+        'default',
+        ['jest-junit', {outputDirectory: 'reports', outputName: 'junit.xml'}]
+    ],
     verbose: true,
     collectCoverage: true,
+    coverageReporters: ['cobertura', 'text', 'lcov', 'html'],
+    coverageDirectory: 'reports/coverage',
     coverageThreshold: {
         global: {
             lines: 80
