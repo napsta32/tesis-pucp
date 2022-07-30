@@ -1,4 +1,5 @@
 import {Router} from 'express';
+import projects from './projects';
 
 const api = Router();
 
@@ -8,9 +9,6 @@ api.get('/', (_, res) => {
         version: '0.0.1'
     });
 });
-
-api.get('/projects', (req, res) => {
-    return res.json({});
-});
+api.use(projects);
 
 export default api;

@@ -1,6 +1,5 @@
 import request from 'supertest';
-import {AppDataSource} from '../../data-source';
-import server, {app} from '../../index';
+import {app, destroyServer} from '../../index';
 
 describe('projects', () => {
     test('should list all the active projects in database', async() => {
@@ -10,10 +9,5 @@ describe('projects', () => {
 });
 
 afterAll(async () => {
-    await new Promise((resolve, reject) => {
-        server.close((err) => {
-            if (err) reject(err);
-            else resolve(undefined);
-        });
-    });
+    await destroyServer();
 });
