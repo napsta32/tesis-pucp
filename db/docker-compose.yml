@@ -1,19 +1,10 @@
 version: "3"
 
 services:
-  fpena_file_manager_test:
-    container_name: fpena_file_manager_test
-    image: fpena_file_manager_server
-    build: ./file-manager-server
-    command: test
-    depends_on:
-      - fpena_file_manager_server
-    networks:
-      - fpena_database_network
   fpena_file_manager_server:
     image: fpena_file_manager_server
     build: ./file-manager-server
-    command: start
+    command: ${SERVER_COMMAND:start}
     depends_on:
       - fpena_preprocessing_db
     # restart: "always"
