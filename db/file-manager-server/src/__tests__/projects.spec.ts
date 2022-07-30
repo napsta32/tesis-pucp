@@ -1,4 +1,5 @@
 import request from 'supertest';
+import {AppDataSource} from '../data-source';
 import server from '../index';
 
 describe('test something', () => {
@@ -6,4 +7,8 @@ describe('test something', () => {
         const res = await request(server).get('/projects');
         expect(res.status).toEqual(200);
     });
+});
+
+afterAll(async ()=> {
+    await AppDataSource.destroy();
 });
