@@ -15,8 +15,8 @@ services:
     environment:
       - DB_HOST=fpena_preprocessing_db
       - DB_PORT=3306
-      - DB_USER=${DB_USER}
-      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_USER=${DB_USER:-root}
+      - DB_PASSWORD=${DB_PASSWORD:-pass}
     # healthcheck:
     #   test: ["CMD", "curl", "-f", "http://localhost:8500/"]
     #   interval: 10s
@@ -31,7 +31,7 @@ services:
     volumes:
       - fpena_preprocessing_db_data_v3:/var/lib/mysql
     environment:
-      - MARIADB_ROOT_PASSWORD=${DB_PASSWORD}
+      - MARIADB_ROOT_PASSWORD=${DB_PASSWORD:-pass}
       - MARIADB_DATABASE=file_manager_db
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "--silent"]
