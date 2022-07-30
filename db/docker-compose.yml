@@ -8,7 +8,7 @@ services:
     networks:
       - fpena_database_network
     ports:
-      - 6118:8500
+      - 6119:8500
     environment:
       - DB_HOST="fpena_preprocessing_db"
       - DB_PORT=3306
