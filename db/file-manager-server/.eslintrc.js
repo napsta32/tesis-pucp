@@ -10,6 +10,17 @@ module.exports = {
 
         'eol-last': ['error', 'always'],
 
+        'object-property-newline': ['error', {allowAllPropertiesOnSameLine: true}],
+
+        'comma-spacing': ['error', {before: false, after: true}],
+
+        'object-curly-newline': ['error', {
+            ObjectExpression: {multiline: true, minProperties: 3},
+            ObjectPattern: {multiline: true},
+            ImportDeclaration: 'never',
+            ExportDeclaration: {multiline: true, minProperties: 3}
+        }],
+
         semi: ['error'],
 
         'comma-dangle': ['error', 'never'],
@@ -70,7 +81,11 @@ module.exports = {
             'error',
             {
                 order: [
-                    {name: 'modelName', type: 'property', static: true},
+                    {
+                        name: 'modelName',
+                        type: 'property',
+                        static: true
+                    },
                     '[properties]',
                     '[non-react-static-properties]',
                     '[static-methods]',
@@ -114,7 +129,10 @@ module.exports = {
                 '@typescript-eslint/quotes': [
                     'error',
                     'single',
-                    {avoidEscape: true, allowTemplateLiterals: true}
+                    {
+                        avoidEscape: true,
+                        allowTemplateLiterals: true
+                    }
                 ],
 
                 '@typescript-eslint/no-unsafe-member-access': 'off',
@@ -141,9 +159,7 @@ module.exports = {
                     }
                 ]
             },
-            parserOptions: {
-                project: ['./tsconfig.json']
-            }
+            parserOptions: {project: ['./tsconfig.json']}
         }
     ]
 };
