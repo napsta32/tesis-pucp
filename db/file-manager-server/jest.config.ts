@@ -13,11 +13,11 @@ const config: Config.InitialOptions = {
             lines: 80
         }
     },
-    rootDir: 'src',
+    roots: ['<rootDir>/src'],
     forceExit: true,
     detectOpenHandles: true,
     setupFiles: [
-        './test-global-teardown.ts'
+        '<rootDir>/test-global-setup.ts'
     ]
 };
 export default config;

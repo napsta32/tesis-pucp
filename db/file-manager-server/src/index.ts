@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import express, {Express, Request, Response} from 'express';
 import dotenv from 'dotenv';
-import api from './api';
+import api from './api/api';
 
 import {AppDataSource} from './data-source';
 import {Project} from './entity/Project';

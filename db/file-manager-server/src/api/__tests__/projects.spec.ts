@@ -1,6 +1,6 @@
 import request from 'supertest';
-import {AppDataSource} from '../data-source';
-import {app} from '../index';
+import {AppDataSource} from '../../data-source';
+import {app} from '../../index';
 
 describe('projects', () => {
     test('should list all the active projects in database', async() => {
