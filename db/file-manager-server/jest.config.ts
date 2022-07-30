@@ -10,7 +10,6 @@ const config: Config.InitialOptions = {
             functions: 80,
             lines: 80
         }
-    },
-    roots: ['<rootDir>/src/']
+    }
 };
 export default config;
