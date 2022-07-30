@@ -10,6 +10,8 @@ services:
     # restart: "always"
     networks:
       - fpena_database_network
+    volumes:
+      - ./file-manager-server/reports:/app/reports
     ports:
       - 6119:8500
     environment:
