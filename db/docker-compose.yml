@@ -1,10 +1,22 @@
 version: "3"
 
 services:
+  fpena_file_manager_test:
+    container_name: fpena_file_manager_test
+    image: fpena_file_manager_server
+    build: ./file-manager-server
+    command: test
+    depends_on:
+      - fpena_file_manager_server
+    networks:
+      - fpena_database_network
   fpena_file_manager_server:
     image: fpena_file_manager_server
     build: ./file-manager-server
-    restart: "always"
+    command: start
+    depends_on:
+      - fpena_preprocessing_db
+    # restart: "always"
     networks:
       - fpena_database_network
     ports:
@@ -14,6 +26,11 @@ services:
       - DB_PORT=3306
       - DB_USER="root"
       - DB_PASSWORD=${DB_PASSWORD}
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8500/"]
+      interval: 10s
+      timeout: 30s
+      retries: 10
   fpena_preprocessing_db:
     image: fpena_preprocessing_db
     build: .
@@ -24,6 +41,8 @@ services:
       - fpena_preprocessing_db_data_v2:/var/lib/mysql
     environment:
       - MARIADB_ROOT_PASSWORD=${DB_PASSWORD}
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "--silent"]
 
 volumes:
   fpena_preprocessing_db_data:

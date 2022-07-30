@@ -8,4 +8,4 @@ RUN npm install
 COPY . /app/
 
 RUN npm run build
-ENTRYPOINT [ "npm", "run", "start" ]
+ENTRYPOINT [ "npm", "run" ]
