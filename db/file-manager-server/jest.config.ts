@@ -15,7 +15,6 @@ const config: Config.InitialOptions = {
     },
     roots: ['<rootDir>/src'],
     forceExit: true,
-    detectOpenHandles: true,
     setupFiles: [
         '<rootDir>/test-global-setup.ts'
     ]
