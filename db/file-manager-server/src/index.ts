@@ -24,7 +24,6 @@ const server = app.listen(port, () => {
     console.log(`⚡️[server]: Server is running at ${host}:${port}`);
 });
 
-export default server;
 export async function destroyServer() {
     await new Promise((resolve, reject) => {
         server.close((err) => {

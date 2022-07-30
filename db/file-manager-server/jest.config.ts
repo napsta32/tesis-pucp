@@ -13,7 +13,8 @@ const config: Config.InitialOptions = {
     coverageReporters: ['cobertura', 'text', 'lcov', 'html'],
     coverageDirectory: 'reports/coverage',
     coverageThreshold: {
-        global: {
+        global: {lines: 80},
+        './src/index.ts': {
             branches: 80,
             functions: 80,
             lines: 80
