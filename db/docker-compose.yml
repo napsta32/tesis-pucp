@@ -32,6 +32,7 @@ services:
       - fpena_preprocessing_db_data_v2:/var/lib/mysql
     environment:
       - MARIADB_ROOT_PASSWORD=${DB_PASSWORD}
+      - MARIADB_DATABASE=file_manager_db
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "--silent"]
 
