@@ -6,7 +6,7 @@ services:
     build: ./file-manager-server
     command: ${SERVER_COMMAND:-test}
     depends_on:
-      - fpena_preprocessing_db
+      - fpena_test_preprocessing_db
     restart: "no"
     networks:
       - fpena_test_database_network
