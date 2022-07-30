@@ -4,10 +4,10 @@ import {Project} from './entity/Project';
 
 export const AppDataSource = new DataSource({
     type: 'mariadb',
-    host: process.env.DB_HOST || 'localhost',
+    host: process.env.DB_HOST,
     port: parseInt(process.env.DB_PORT || '3306'),
-    username: process.env.DB_USER || 'root',
-    password: process.env.DB_PASSWORD || 'pass',
+    username: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
     database: 'file_manager_db',
     synchronize: true,
     logging: false,

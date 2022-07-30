@@ -16,7 +16,6 @@ services:
       - 6119:8500
     environment:
       - DB_HOST=fpena_test_preprocessing_db
-      - DB_PORT=3306
       - DB_USER=${DB_USER:-root}
       - DB_PASSWORD=${DB_PASSWORD:-pass}
   fpena_test_preprocessing_db:
