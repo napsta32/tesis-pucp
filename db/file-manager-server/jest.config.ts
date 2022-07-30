@@ -8,9 +8,12 @@ const config: Config.InitialOptions = {
     collectCoverage: true,
     coverageThreshold: {
         global: {
-            branches: 80,
-            functions: 80,
             lines: 80
+        },
+        './src/api': {
+            branches: 100,
+            functions: 100,
+            lines: 100
         }
     },
     roots: ['<rootDir>/src'],
