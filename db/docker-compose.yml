@@ -17,11 +17,11 @@ services:
       - DB_PORT=3306
       - DB_USER="root"
       - DB_PASSWORD=${DB_PASSWORD}
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8500/"]
-      interval: 10s
-      timeout: 30s
-      retries: 10
+    # healthcheck:
+    #   test: ["CMD", "curl", "-f", "http://localhost:8500/"]
+    #   interval: 10s
+    #   timeout: 30s
+    #   retries: 10
   fpena_preprocessing_db:
     image: fpena_preprocessing_db
     build: .
