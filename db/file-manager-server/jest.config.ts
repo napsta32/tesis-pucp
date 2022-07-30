@@ -11,6 +11,6 @@ const config: Config.InitialOptions = {
             lines: 80
         }
     },
-    roots: ['<rootDir>/tests/']
+    roots: ['<rootDir>/src/']
 };
 export default config;

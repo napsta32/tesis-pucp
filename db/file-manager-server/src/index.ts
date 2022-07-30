@@ -23,3 +23,5 @@ AppDataSource.initialize().then(async () => {
 server.listen(port, () => {
     console.log(`⚡️[server]: Server is running at ${host}:${port}`);
 });
+
+export default server;
