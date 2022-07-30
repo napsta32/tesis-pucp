@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import express, {Express, Request, Response} from 'express';
 import dotenv from 'dotenv';
-import app from './app';
+import api from './api';
 
 import {AppDataSource} from './data-source';
 import {Project} from './entity/Project';
@@ -9,18 +9,18 @@ import {Project} from './entity/Project';
 
 dotenv.config();
 
-const server: Express = express();
+export const app: Express = express();
 const host: string = process.env.HOST || 'http://localhost';
 const port: string = process.env.PORT || '8500';
 
-server.use('/', app);
+app.use('/', api);
 
 AppDataSource.initialize().then(async () => {
     // Initialize db
 }).catch(error => console.log(error));
 
 
-server.listen(port, () => {
+const server = app.listen(port, () => {
     console.log(`⚡️[server]: Server is running at ${host}:${port}`);
 });
 
