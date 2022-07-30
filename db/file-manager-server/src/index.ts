@@ -5,6 +5,7 @@ import api from './api';
 
 import {AppDataSource} from './data-source';
 import {DataSource} from 'typeorm';
+import {Project} from './entity/Project';
 
 
 dotenv.config();
@@ -15,7 +16,13 @@ const port: string = process.env.PORT || '8500';
 
 app.use('/', api);
 
-const dataSourceInitPromise = AppDataSource.initialize();
+const dataSourceInitPromise = AppDataSource.initialize().then(async dataSource => {
+    if (process.env.DEV === 'true') {
+        const projectsRepository = AppDataSource.getRepository(Project);
+        await projectsRepository.insert(new Project('dummy'));
+    }
+    return dataSource;
+});
 async function getDataSource(): Promise<DataSource> {
     return await dataSourceInitPromise;
 }

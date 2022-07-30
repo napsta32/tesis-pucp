@@ -17,4 +17,8 @@ export class Project {
     })
     public updatedAt: Date;
 
+    constructor(name: string) {
+        this.name = name;
+    }
+
 }

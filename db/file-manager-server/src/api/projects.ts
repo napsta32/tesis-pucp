@@ -1,9 +1,16 @@
 import {Router} from 'express';
+import wrap  from 'express-async-handler';
+import {AppDataSource} from '../data-source';
+import {Project} from '../entity/Project';
 
-const projects = Router();
+const projectsAPI = Router();
+const projectsRepository = AppDataSource.getRepository(Project);
 
-projects.get('/projects', (req, res) => {
-    return res.json({});
-});
+projectsAPI.get('/projects', wrap(async (req, res) => {
+    const projects = await projectsRepository.find({
+        order: {id: 'DESC'}, take: 100, skip: 0
+    });
+    res.json(projects);
+}));
 
-export default projects;
+export default projectsAPI;
