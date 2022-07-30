@@ -13,6 +13,7 @@ const config: Config.InitialOptions = {
             lines: 80
         }
     },
-    rootDir: 'src'
+    rootDir: 'src',
+    detectOpenHandles: true
 };
 export default config;
