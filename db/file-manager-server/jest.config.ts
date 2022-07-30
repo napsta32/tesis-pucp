@@ -15,7 +15,6 @@ const config: Config.InitialOptions = {
     },
     rootDir: 'src',
     detectOpenHandles: true,
-    globalTeardown: 'test-global-teardown.ts',
     setupFiles: [
         '<rootDir>/test-global-teardown.ts'
     ]
