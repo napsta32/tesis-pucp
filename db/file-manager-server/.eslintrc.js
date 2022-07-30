@@ -117,6 +117,8 @@ module.exports = {
                     {avoidEscape: true, allowTemplateLiterals: true}
                 ],
 
+                '@typescript-eslint/no-unsafe-member-access': 'off',
+
                 'no-redeclare': 'off',
                 '@typescript-eslint/no-redeclare': ['error'],
 

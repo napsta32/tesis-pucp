@@ -1,0 +1,35 @@
+version: "3"
+
+services:
+  fpena_test_file_manager_server:
+    image: fpena_test_file_manager_server
+    build: ./file-manager-server
+    command: ${SERVER_COMMAND:-test}
+    depends_on:
+      - fpena_preprocessing_db
+    restart: "no"
+    networks:
+      - fpena_test_database_network
+    volumes:
+      - ./file-manager-server/reports:/app/reports
+    ports:
+      - 6119:8500
+    environment:
+      - DB_HOST=fpena_test_preprocessing_db
+      - DB_PORT=3306
+      - DB_USER=${DB_USER:-root}
+      - DB_PASSWORD=${DB_PASSWORD:-pass}
+  fpena_test_preprocessing_db:
+    image: fpena_preprocessing_db
+    build: .
+    restart: "no"
+    networks:
+      - fpena_test_database_network
+    environment:
+      - MARIADB_ROOT_PASSWORD=${DB_PASSWORD:-pass}
+      - MARIADB_DATABASE=file_manager_db
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "--silent"]
+
+networks:
+  fpena_test_database_network:

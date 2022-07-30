@@ -7,11 +7,9 @@ services:
     command: ${SERVER_COMMAND:-start}
     depends_on:
       - fpena_preprocessing_db
-    # restart: "always"
+    restart: "always"
     networks:
       - fpena_database_network
-    volumes:
-      - ./file-manager-server/reports:/app/reports
     ports:
       - 6119:8500
     environment:
@@ -19,11 +17,11 @@ services:
       - DB_PORT=3306
       - DB_USER=${DB_USER:-root}
       - DB_PASSWORD=${DB_PASSWORD:-pass}
-    # healthcheck:
-    #   test: ["CMD", "curl", "-f", "http://localhost:8500/"]
-    #   interval: 10s
-    #   timeout: 30s
-    #   retries: 10
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8500/"]
+      interval: 10s
+      timeout: 30s
+      retries: 10
   fpena_preprocessing_db:
     image: fpena_preprocessing_db
     build: .
@@ -39,8 +37,6 @@ services:
       test: ["CMD", "mysqladmin", "ping", "--silent"]
 
 volumes:
-  fpena_preprocessing_db_data:
-  fpena_preprocessing_db_data_v2:
   fpena_preprocessing_db_data_v3:
 
 networks:

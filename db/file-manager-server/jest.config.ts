@@ -26,6 +26,7 @@ const config: Config.InitialOptions = {
     forceExit: true,
     setupFiles: [
         '<rootDir>/test-global-setup.ts'
-    ]
+    ],
+    maxWorkers: 1
 };
 export default config;
