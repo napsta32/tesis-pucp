@@ -5,6 +5,7 @@ services:
     image: fpena_test_file_manager_server
     build: ./file-manager-server
     command: ${SERVER_COMMAND:-test}
+    user: "${UID}:${GID}"
     depends_on:
       - fpena_test_preprocessing_db
     restart: "no"
