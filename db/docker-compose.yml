@@ -24,7 +24,8 @@ services:
       retries: 10
   fpena_preprocessing_db:
     image: fpena_preprocessing_db
-    build: .
+    build:
+      dockerfile: prod.Dockerfile
     restart: "always"
     networks:
       - fpena_database_network

@@ -21,7 +21,8 @@ services:
       - DB_PASSWORD=${DB_PASSWORD:-pass}
   fpena_test_preprocessing_db:
     image: fpena_preprocessing_db
-    build: .
+    build:
+      dockerfile: test.Dockerfile
     restart: "no"
     networks:
       - fpena_test_database_network
