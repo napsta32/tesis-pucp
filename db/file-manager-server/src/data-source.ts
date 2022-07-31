@@ -1,7 +1,8 @@
 import 'reflect-metadata';
+import dotenv from 'dotenv';
 import {DataSource} from 'typeorm';
 import {Project} from './entity/Project';
-import dotenv from 'dotenv';
+import {FileState} from './entity/FileState';
 
 dotenv.config();
 
@@ -12,9 +13,9 @@ export const AppDataSource = new DataSource({
     username: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: 'file_manager_db',
-    synchronize: true,
+    synchronize: false,
     logging: false,
-    entities: [Project],
+    entities: [Project, FileState],
     migrations: [],
     subscribers: []
 });

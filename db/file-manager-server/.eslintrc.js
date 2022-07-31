@@ -14,6 +14,8 @@ module.exports = {
 
         'comma-spacing': ['error', {before: false, after: true}],
 
+        'newline-per-chained-call': ['error'],
+
         'object-curly-newline': ['error', {
             ObjectExpression: {multiline: true, minProperties: 3},
             ObjectPattern: {multiline: true},

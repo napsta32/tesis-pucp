@@ -11,14 +11,10 @@ const config: Config.InitialOptions = {
     verbose: true,
     collectCoverage: true,
     coverageReporters: ['cobertura', 'text', 'lcov', 'html'],
-    coverageDirectory: 'reports/coverage',
+    // coverageDirectory: 'reports/coverage',
     coverageThreshold: {
         global: {lines: 80},
-        './src/index.ts': {
-            branches: 80,
-            functions: 80,
-            lines: 80
-        },
+        './src/index.ts': {},
         './src/api': {
             branches: 100,
             functions: 100,
