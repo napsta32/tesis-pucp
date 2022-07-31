@@ -12,6 +12,7 @@ services:
       - fpena_test_database_network
     volumes:
       - ./file-manager-server/reports:/app/reports
+      - ./file-manager-server/coverage:/app/coverage
     ports:
       - 6119:8500
     environment:
