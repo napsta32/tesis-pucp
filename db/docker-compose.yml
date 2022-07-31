@@ -37,6 +37,13 @@ services:
       - MARIADB_DATABASE=file_manager_db
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "--silent"]
+  fpena_db_adminer:
+    image: adminer
+    restart: always
+    networks:
+      - fpena_database_network
+    ports:
+      - 6121:8080
 
 volumes:
   fpena_preprocessing_db_data_v3:
