@@ -25,6 +25,7 @@ services:
   fpena_preprocessing_db:
     image: fpena_preprocessing_db
     build:
+      context: .
       dockerfile: prod.Dockerfile
     restart: "always"
     networks:

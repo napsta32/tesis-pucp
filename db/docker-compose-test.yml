@@ -22,6 +22,7 @@ services:
   fpena_test_preprocessing_db:
     image: fpena_preprocessing_db
     build:
+      context: .
       dockerfile: test.Dockerfile
     restart: "no"
     networks:
