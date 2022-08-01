@@ -1,19 +1,19 @@
 version: "3"
 
 services:
-  fpena_file_manager_server:
-    image: fpena_file_manager_server
+  fpena_filemanager_server:
+    image: fpena_filemanager_server
     build: ./server
     command: ${SERVER_COMMAND:-start}
     depends_on:
-      - fpena_preprocessing_db
+      - fpena_filemanager_db
     restart: "always"
     networks:
       - fpena_database_network
     ports:
       - 6119:8500
     environment:
-      - DB_HOST=fpena_preprocessing_db
+      - DB_HOST=fpena_filemanager_db
       - DB_PORT=3306
       - DB_USER=${DB_USER:-root}
       - DB_PASSWORD=${DB_PASSWORD:-pass}
@@ -22,8 +22,8 @@ services:
       interval: 10s
       timeout: 30s
       retries: 10
-  fpena_preprocessing_db:
-    image: fpena_preprocessing_db
+  fpena_filemanager_db:
+    image: fpena_filemanager_db
     build:
       context: .
       dockerfile: prod.Dockerfile
@@ -31,7 +31,7 @@ services:
     networks:
       - fpena_database_network
     volumes:
-      - fpena_preprocessing_db_data:/var/lib/mysql
+      - fpena_filemanager_db_data:/var/lib/mysql
     environment:
       - MARIADB_ROOT_PASSWORD=${DB_PASSWORD:-pass}
       - MARIADB_DATABASE=file_manager_db
@@ -46,7 +46,7 @@ services:
       - 6121:8080
 
 volumes:
-  fpena_preprocessing_db_data:
+  fpena_filemanager_db_data:
 
 networks:
   fpena_database_network:

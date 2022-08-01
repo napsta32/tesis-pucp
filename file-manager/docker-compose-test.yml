@@ -6,7 +6,7 @@ services:
     build: ./server
     command: ${SERVER_COMMAND:-test}
     depends_on:
-      - fpena_test_preprocessing_db
+      - fpena_filemanager_testdb
     restart: "no"
     networks:
       - fpena_test_database_network
@@ -17,11 +17,11 @@ services:
       - 6119:8500
     environment:
       - DEV=true
-      - DB_HOST=fpena_test_preprocessing_db
+      - DB_HOST=fpena_filemanager_testdb
       - DB_USER=${DB_USER:-root}
       - DB_PASSWORD=${DB_PASSWORD:-pass}
-  fpena_test_preprocessing_db:
-    image: fpena_preprocessing_db
+  fpena_filemanager_testdb:
+    image: fpena_filemanager_testdb
     build:
       context: ./db
       dockerfile: test.Dockerfile
