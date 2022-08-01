@@ -11,7 +11,6 @@ const config: Config.InitialOptions = {
     verbose: true,
     collectCoverage: true,
     coverageReporters: ['cobertura', 'text', 'lcov', 'html'],
-    // coverageDirectory: 'reports/coverage',
     coverageThreshold: {
         global: {lines: 80},
         './src/index.ts': {},

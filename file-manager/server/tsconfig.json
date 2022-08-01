@@ -13,6 +13,6 @@
 		"strict": true,
 		"skipLibCheck": true
 	},
-	"include": ["src/**/*"],
+	"include": ["src/**/*", "jest.config.ts"],
 	"exclude": [".eslintrc.js"]
 }
