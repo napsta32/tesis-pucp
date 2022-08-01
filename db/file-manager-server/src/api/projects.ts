@@ -7,10 +7,11 @@ const projectsAPI = Router();
 const projectsRepository = AppDataSource.getRepository(Project);
 
 projectsAPI.get('/projects', wrap(async (req, res) => {
-    const projects = await projectsRepository.find({
-        order: {id: 'DESC'}, take: 100, skip: 0
-    });
-    res.json(projects);
+    // const projects = await projectsRepository.find({
+    //     order: {id: 'DESC'}, take: 100, skip: 0
+    // });
+    // res.json(projects);
+    res.json({});
 }));
 
 export default projectsAPI;
