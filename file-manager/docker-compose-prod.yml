@@ -25,7 +25,7 @@ services:
   fpena_filemanager_db:
     image: fpena_filemanager_db
     build:
-      context: .
+      context: db
       dockerfile: prod.Dockerfile
     restart: "always"
     networks:
