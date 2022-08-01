@@ -8,8 +8,6 @@ services:
     depends_on:
       - fpena_filemanager_testdb
     restart: "no"
-    networks:
-      - fpena_test_database_network
     volumes:
       - ./server/reports:/app/reports
       - ./server/coverage:/app/coverage
@@ -26,13 +24,9 @@ services:
       context: ./db
       dockerfile: test.Dockerfile
     restart: "no"
-    networks:
-      - fpena_test_database_network
     environment:
       - MARIADB_ROOT_PASSWORD=${DB_PASSWORD:-pass}
       - MARIADB_DATABASE=file_manager_db
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "--silent"]
 
-networks:
-  fpena_test_database_network:
