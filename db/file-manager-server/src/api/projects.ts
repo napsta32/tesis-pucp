@@ -6,7 +6,7 @@ import {Project} from '../entity/Project';
 const projectsAPI = Router();
 const projectsRepository = AppDataSource.getRepository(Project);
 
-projectsAPI.get('/projects', wrap(async (req, res) => {
+projectsAPI.get('/projects', wrap((req, res) => {
     // const projects = await projectsRepository.find({
     //     order: {id: 'DESC'}, take: 100, skip: 0
     // });
