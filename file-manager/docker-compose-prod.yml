@@ -3,7 +3,7 @@ version: "3"
 services:
   fpena_file_manager_server:
     image: fpena_file_manager_server
-    build: ./file-manager-server
+    build: ./server
     command: ${SERVER_COMMAND:-start}
     depends_on:
       - fpena_preprocessing_db

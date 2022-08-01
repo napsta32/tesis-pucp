@@ -3,7 +3,7 @@ version: "3"
 services:
   fpena_test_file_manager_server:
     image: fpena_test_file_manager_server
-    build: ./file-manager-server
+    build: ./server
     command: ${SERVER_COMMAND:-test}
     depends_on:
       - fpena_test_preprocessing_db
@@ -11,8 +11,8 @@ services:
     networks:
       - fpena_test_database_network
     volumes:
-      - ./file-manager-server/reports:/app/reports
-      - ./file-manager-server/coverage:/app/coverage
+      - ./server/reports:/app/reports
+      - ./server/coverage:/app/coverage
     ports:
       - 6119:8500
     environment:
@@ -23,7 +23,7 @@ services:
   fpena_test_preprocessing_db:
     image: fpena_preprocessing_db
     build:
-      context: .
+      context: ./db
       dockerfile: test.Dockerfile
     restart: "no"
     networks:
