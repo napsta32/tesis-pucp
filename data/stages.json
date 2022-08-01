@@ -1,0 +1,6 @@
+{
+    "uncompress": {
+        "origin": "raw",
+        "script": "uncompress.mjs"
+    }
+}

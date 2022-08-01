@@ -1,12 +1,9 @@
-# FROM alpine
-FROM bash
+FROM alpine
 
-# RUN apk add --update nodejs npm ffmpeg git
-
-# Install global tooling
-# RUN npm install --global zx
+RUN apk add --update python3 python3-pip ffmpeg
 
 WORKDIR /app
 COPY . /app/
 
+RUN python3 -m pip install -r requirements.txt
 RUN chmod +x /app/scripts/preprocess.sh
