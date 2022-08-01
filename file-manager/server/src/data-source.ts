@@ -7,7 +7,7 @@ import {FileState} from './entity/FileState';
 dotenv.config();
 
 export const AppDataSource = new DataSource({
-    type: 'mysql',
+    type: 'mariadb',
     host: process.env.DB_HOST,
     port: parseInt(process.env.DB_PORT || '3306'),
     username: process.env.DB_USER || 'root',
