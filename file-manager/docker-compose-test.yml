@@ -13,8 +13,6 @@ services:
     volumes:
       - ./server/reports:/app/reports
       - ./server/coverage:/app/coverage
-    ports:
-      - 6119:8500
     environment:
       - DEV=true
       - DB_HOST=fpena_filemanager_testdb
