@@ -15,7 +15,7 @@ export const AppDataSource = new DataSource({
     username: process.env.DB_USER || 'root',
     password: process.env.DB_PASSWORD || 'pass',
     database: 'file_manager_db',
-    synchronize: true,
+    synchronize: false,
     logging: false,
     entities: [Project, FileState],
     migrations: [],
