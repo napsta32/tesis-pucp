@@ -6,6 +6,8 @@ import {FileState} from './entity/FileState';
 
 dotenv.config();
 
+console.log(process.env.DB_PASSWORD);
+
 export const AppDataSource = new DataSource({
     type: 'mariadb',
     host: process.env.DB_HOST,
@@ -13,7 +15,7 @@ export const AppDataSource = new DataSource({
     username: process.env.DB_USER || 'root',
     password: process.env.DB_PASSWORD || 'pass',
     database: 'file_manager_db',
-    synchronize: false,
+    synchronize: true,
     logging: false,
     entities: [Project, FileState],
     migrations: [],
