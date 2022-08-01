@@ -8,6 +8,9 @@ services:
     depends_on:
       - fpena_filemanager_db
     restart: "always"
+    networks:
+      - fpenal_filemanager_backend_network
+      - fpena_filemanager_public_network
     ports:
       - 6119:8500
     environment:
@@ -26,6 +29,8 @@ services:
       context: db
       dockerfile: prod.Dockerfile
     restart: "always"
+    networks:
+      - fpenal_filemanager_backend_network
     volumes:
       - fpena_filemanager_db_data:/var/lib/mysql
     environment:
@@ -36,8 +41,15 @@ services:
   fpena_db_adminer:
     image: adminer
     restart: always
+    networks:
+      - fpenal_filemanager_backend_network
     ports:
       - 6121:8080
 
 volumes:
   fpena_filemanager_db_data:
+
+networks:
+  fpenal_filemanager_backend_network:
+  fpena_filemanager_public_network:
+    external: true
