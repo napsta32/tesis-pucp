@@ -16,8 +16,8 @@ services:
     environment:
       - DEV=true
       - DB_HOST=fpena_filemanager_testdb
-      - DB_USER=${DB_USER:-root}
-      - DB_PASSWORD=${DB_PASSWORD:-pass}
+      - DB_USER=root
+      - DB_PASSWORD=pass
   fpena_filemanager_testdb:
     image: fpena_filemanager_testdb
     build:
@@ -25,7 +25,7 @@ services:
       dockerfile: test.Dockerfile
     restart: "no"
     environment:
-      - MARIADB_ROOT_PASSWORD=${DB_PASSWORD:-pass}
+      - MARIADB_ROOT_PASSWORD=pass
       - MARIADB_DATABASE=file_manager_db
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "--silent"]
