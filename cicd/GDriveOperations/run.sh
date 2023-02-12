@@ -10,5 +10,4 @@ arguments=${@:2}
 echo "$action $arguments"
 
 docker build -t fpenac-upload-to-drive .
-docker run -v ${PWD}:/app fpenac-upload-to-drive sh -c "python ${action}.py ${arguments}"
-docker rmi fpenac-upload-to-drive
+docker run -v ${PWD}:/app -p 7430:7430 fpenac-upload-to-drive sh -c "python ${action}.py ${arguments}"
