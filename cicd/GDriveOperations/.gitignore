@@ -1,3 +1,4 @@
-FileToUpload
+__pycache__
+
 DriveUploader-secrets.json
 token.json
