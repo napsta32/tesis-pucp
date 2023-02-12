@@ -28,7 +28,7 @@ def get_credentials():
 
             flow = InstalledAppFlow.from_client_secrets_file(
                 SECRETS_FILE, SCOPES)
-            creds = flow.run_local_server(port=7430)
+            creds = flow.run_local_server(bind_addr='0.0.0.0', port=7430)
         # Save the credentials for the next run
         with open(TOKEN_FILE, 'w') as token:
             token.write(creds.to_json())
