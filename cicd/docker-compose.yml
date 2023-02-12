@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  fpenac-cicd:
+    container_name: fpenac-cicd # Single container is expected
+    build: .
+    restart: on-failure
+    ports:
+      - "7433:8080"
+      - "7434:50000"
+    volumes:
+      # Backup data
+      - fpenac-cicd-volume:/var/jenkins_home
+
+volumes:
+  fpenac-cicd-volume:
