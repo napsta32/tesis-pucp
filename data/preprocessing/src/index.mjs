@@ -2,7 +2,8 @@
 import 'zx/globals';
 
 async function main() {
-    echo($`ls`);
+    const files = $`ls`;
+    echo(files);
 }
 
 main();
