@@ -5,16 +5,10 @@ services:
     image: fpena_preprocessing
     build: .
     restart: "no"
-    command: /app/scripts/preprocess.sh
-    networks:
-      - fpena_filemanager_public_network
+    command: npx zx /app/src/index.mjs
     volumes:
       - h36m:/data/h36m
 
 volumes:
   h36m:
-    external: true
-
-networks:
-  fpena_filemanager_public_network:
     external: true
