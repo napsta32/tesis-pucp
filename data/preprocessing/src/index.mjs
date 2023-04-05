@@ -2,7 +2,7 @@
 import 'zx/globals';
 
 async function main() {
-    echo('test');
+    echo($`ls`);
 }
 
 main();
