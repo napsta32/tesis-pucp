@@ -5,7 +5,7 @@ services:
     image: fpena_preprocessing
     build: .
     restart: "no"
-    command: npx zx /app/src/index.mjs
+    command: npm run start
     volumes:
       - h36m:/data/h36m
 

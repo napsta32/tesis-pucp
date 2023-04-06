@@ -1,203 +1,204 @@
 {
-  "raw": [
+  "directory": "/data/h36m/raw/",
+  "fileList": [
     {
-      "file": "/data/h36m/raw/Poses_D2_Positions_S1.tgz",
+      "file": "Poses_D2_Positions_S1.tgz",
       "md5": "69e038858ace96ba5f6c5ccea52e95e8"
     },
     {
-      "file": "/data/h36m/raw/Poses_D2_Positions_S11.tgz",
+      "file": "Poses_D2_Positions_S11.tgz",
       "md5": "df1fde6b5656729336f54dcd79ab6e47"
     },
     {
-      "file": "/data/h36m/raw/Poses_D2_Positions_S5.tgz",
+      "file": "Poses_D2_Positions_S5.tgz",
       "md5": "7ac8c4830468a1ed3464076ee9603632"
     },
     {
-      "file": "/data/h36m/raw/Poses_D2_Positions_S6.tgz",
+      "file": "Poses_D2_Positions_S6.tgz",
       "md5": "5f9706d5259f648cca802c069dec9681"
     },
     {
-      "file": "/data/h36m/raw/Poses_D2_Positions_S7.tgz",
+      "file": "Poses_D2_Positions_S7.tgz",
       "md5": "543c4053c962db54d1d7361d4accffb4"
     },
     {
-      "file": "/data/h36m/raw/Poses_D2_Positions_S8.tgz",
+      "file": "Poses_D2_Positions_S8.tgz",
       "md5": "e9de190d782452edc954ac191907adcf"
     },
     {
-      "file": "/data/h36m/raw/Poses_D2_Positions_S9.tgz",
+      "file": "Poses_D2_Positions_S9.tgz",
       "md5": "232c2244afae96cb900908c6825d478c"
     },
     {
-      "file": "/data/h36m/raw/Poses_D3_Positions_mono_S1.tgz",
+      "file": "Poses_D3_Positions_mono_S1.tgz",
       "md5": "4c844740ba583517c74b6c496c190761"
     },
     {
-      "file": "/data/h36m/raw/Poses_D3_Positions_mono_S11.tgz",
+      "file": "Poses_D3_Positions_mono_S11.tgz",
       "md5": "944a8bca62a933f5d630a835868fba23"
     },
     {
-      "file": "/data/h36m/raw/Poses_D3_Positions_mono_S5.tgz",
+      "file": "Poses_D3_Positions_mono_S5.tgz",
       "md5": "4e14165ed00b7aff1111a81c1ca4b7b3"
     },
     {
-      "file": "/data/h36m/raw/Poses_D3_Positions_mono_S6.tgz",
+      "file": "Poses_D3_Positions_mono_S6.tgz",
       "md5": "9681696b33a0d487493330e825b408d6"
     },
     {
-      "file": "/data/h36m/raw/Poses_D3_Positions_mono_S7.tgz",
+      "file": "Poses_D3_Positions_mono_S7.tgz",
       "md5": "807109c1a304ce67c6f0cc06a94846fc"
     },
     {
-      "file": "/data/h36m/raw/Poses_D3_Positions_mono_S8.tgz",
+      "file": "Poses_D3_Positions_mono_S8.tgz",
       "md5": "da8b6c948e7dcd280061cd4d99d7352f"
     },
     {
-      "file": "/data/h36m/raw/Poses_D3_Positions_mono_S9.tgz",
+      "file": "Poses_D3_Positions_mono_S9.tgz",
       "md5": "0fad285a69fdcdf4958cc4c80d93abbc"
     },
     {
-      "file": "/data/h36m/raw/Poses_D3_Positions_mono_universal_S1.tgz",
+      "file": "Poses_D3_Positions_mono_universal_S1.tgz",
       "md5": "3c75f06fdf3c4f3b8fb1f8f11d18a10e"
     },
     {
-      "file": "/data/h36m/raw/Poses_D3_Positions_mono_universal_S11.tgz",
+      "file": "Poses_D3_Positions_mono_universal_S11.tgz",
       "md5": "c00b5b22ed1b88de5a536433e300503e"
     },
     {
-      "file": "/data/h36m/raw/Poses_D3_Positions_mono_universal_S5.tgz",
+      "file": "Poses_D3_Positions_mono_universal_S5.tgz",
       "md5": "a0c821f5501fcc450e28c38e5ebd0c17"
     },
     {
-      "file": "/data/h36m/raw/Poses_D3_Positions_mono_universal_S6.tgz",
+      "file": "Poses_D3_Positions_mono_universal_S6.tgz",
       "md5": "dce0fb2f44b487b2bd36f603d1ff894a"
     },
     {
-      "file": "/data/h36m/raw/Poses_D3_Positions_mono_universal_S7.tgz",
+      "file": "Poses_D3_Positions_mono_universal_S7.tgz",
       "md5": "848717a95a96336ec7707b20ec463965"
     },
     {
-      "file": "/data/h36m/raw/Poses_D3_Positions_mono_universal_S8.tgz",
+      "file": "Poses_D3_Positions_mono_universal_S8.tgz",
       "md5": "8f5182924c29721d9c4227aa43e3d7b3"
     },
     {
-      "file": "/data/h36m/raw/Poses_D3_Positions_mono_universal_S9.tgz",
+      "file": "Poses_D3_Positions_mono_universal_S9.tgz",
       "md5": "bbc436bc0f35bd09e272ad0ed1f188e2"
     },
     {
-      "file": "/data/h36m/raw/Segments_mat_gt_bb_Directions.tgz",
+      "file": "Segments_mat_gt_bb_Directions.tgz",
       "md5": "6c42876fa865d9f3baa0ceb24b48b504"
     },
     {
-      "file": "/data/h36m/raw/Segments_mat_gt_bb_Discussion.tgz",
+      "file": "Segments_mat_gt_bb_Discussion.tgz",
       "md5": "3828b7ac884d2dc82297ef2e3e3f0a4b"
     },
     {
-      "file": "/data/h36m/raw/Segments_mat_gt_bb_Eating.tgz",
+      "file": "Segments_mat_gt_bb_Eating.tgz",
       "md5": "c22714d91d4efbc6ff2208b317229b20"
     },
     {
-      "file": "/data/h36m/raw/Segments_mat_gt_bb_Greeting.tgz",
+      "file": "Segments_mat_gt_bb_Greeting.tgz",
       "md5": "59b7bf323180aedae5cd7401c55c9ee3"
     },
     {
-      "file": "/data/h36m/raw/Segments_mat_gt_bb_Phone_Call.tgz",
+      "file": "Segments_mat_gt_bb_Phone_Call.tgz",
       "md5": "1a7adb985b07765d77a597acef31f3ff"
     },
     {
-      "file": "/data/h36m/raw/Segments_mat_gt_bb_Posing.tgz",
+      "file": "Segments_mat_gt_bb_Posing.tgz",
       "md5": "9ea39b583b91074e7f5e1a2be5abd1f9"
     },
     {
-      "file": "/data/h36m/raw/Segments_mat_gt_bb_Purchases.tgz",
+      "file": "Segments_mat_gt_bb_Purchases.tgz",
       "md5": "c8b8959e820c296470b70df96cfe8175"
     },
     {
-      "file": "/data/h36m/raw/Segments_mat_gt_bb_S1.tgz",
+      "file": "Segments_mat_gt_bb_S1.tgz",
       "md5": "289d9bf0f7ad10a4f554b6601ed885c8"
     },
     {
-      "file": "/data/h36m/raw/Segments_mat_gt_bb_S11.tgz",
+      "file": "Segments_mat_gt_bb_S11.tgz",
       "md5": "df4b33aa029c93a358e9fd1d2d47fed7"
     },
     {
-      "file": "/data/h36m/raw/Segments_mat_gt_bb_S5.tgz",
+      "file": "Segments_mat_gt_bb_S5.tgz",
       "md5": "5796cdb1c05f4496a92ec69677835293"
     },
     {
-      "file": "/data/h36m/raw/Segments_mat_gt_bb_S6.tgz",
+      "file": "Segments_mat_gt_bb_S6.tgz",
       "md5": "e0f8396b8235cdd40f682f12a880d50f"
     },
     {
-      "file": "/data/h36m/raw/Segments_mat_gt_bb_S7.tgz",
+      "file": "Segments_mat_gt_bb_S7.tgz",
       "md5": "f34cf03a329fa26023eae2b716b3c287"
     },
     {
-      "file": "/data/h36m/raw/Segments_mat_gt_bb_S8.tgz",
+      "file": "Segments_mat_gt_bb_S8.tgz",
       "md5": "88ced4d434fa469fb90bd2ce4eb4cc98"
     },
     {
-      "file": "/data/h36m/raw/Segments_mat_gt_bb_S9.tgz",
+      "file": "Segments_mat_gt_bb_S9.tgz",
       "md5": "97b4089c94fa76ac7f87ce892a5c1f31"
     },
     {
-      "file": "/data/h36m/raw/Segments_mat_gt_bb_Sitting.tgz",
+      "file": "Segments_mat_gt_bb_Sitting.tgz",
       "md5": "89ea5179fc5889d96ffb02ec723e44b5"
     },
     {
-      "file": "/data/h36m/raw/Segments_mat_gt_bb_Sitting_Down.tgz",
+      "file": "Segments_mat_gt_bb_Sitting_Down.tgz",
       "md5": "64dbfdc73b53594f0abcc6499894d52a"
     },
     {
-      "file": "/data/h36m/raw/Segments_mat_gt_bb_Smoking.tgz",
+      "file": "Segments_mat_gt_bb_Smoking.tgz",
       "md5": "42938f33097df0d59908347ac6d39db9"
     },
     {
-      "file": "/data/h36m/raw/Segments_mat_gt_bb_Taking_Photo.tgz",
+      "file": "Segments_mat_gt_bb_Taking_Photo.tgz",
       "md5": "81280bf2c98047b8466eae80a20f7e29"
     },
     {
-      "file": "/data/h36m/raw/Segments_mat_gt_bb_Waiting.tgz",
+      "file": "Segments_mat_gt_bb_Waiting.tgz",
       "md5": "fa1d4fd8cf2b8f0f0d4028f76421d5f8"
     },
     {
-      "file": "/data/h36m/raw/Segments_mat_gt_bb_Walking.tgz",
+      "file": "Segments_mat_gt_bb_Walking.tgz",
       "md5": "f4dda1409c22732ebd934f328bef44a8"
     },
     {
-      "file": "/data/h36m/raw/Segments_mat_gt_bb_Walking_Dog.tgz",
+      "file": "Segments_mat_gt_bb_Walking_Dog.tgz",
       "md5": "872296a439619cffabdbf60c6aebc786"
     },
     {
-      "file": "/data/h36m/raw/Segments_mat_gt_bb_Walking_Together.tgz",
+      "file": "Segments_mat_gt_bb_Walking_Together.tgz",
       "md5": "4dca61d2d3bb35afa239d28973217d51"
     },
     {
-      "file": "/data/h36m/raw/Videos_S1.tgz",
+      "file": "Videos_S1.tgz",
       "md5": "d517e6c0b1112427b2a39fcbd732281c"
     },
     {
-      "file": "/data/h36m/raw/Videos_S11.tgz",
+      "file": "Videos_S11.tgz",
       "md5": "25c25250be8f75d7991dcbf74bb9d339"
     },
     {
-      "file": "/data/h36m/raw/Videos_S5.tgz",
+      "file": "Videos_S5.tgz",
       "md5": "02ef041813c3a37b137f86df24419e5a"
     },
     {
-      "file": "/data/h36m/raw/Videos_S6.tgz",
+      "file": "Videos_S6.tgz",
       "md5": "a4b8690e5320c5854f99f60bf31cbabc"
     },
     {
-      "file": "/data/h36m/raw/Videos_S7.tgz",
+      "file": "Videos_S7.tgz",
       "md5": "79caf93c6ec31b1c14cd1d31d5f292e0"
     },
     {
-      "file": "/data/h36m/raw/Videos_S8.tgz",
+      "file": "Videos_S8.tgz",
       "md5": "18818148e68fcd80fce1efa82f98126d"
     },
     {
-      "file": "/data/h36m/raw/Videos_S9.tgz",
+      "file": "Videos_S9.tgz",
       "md5": "3e7d923d5c573ac833334a31b5f8a797"
     }
   ]
