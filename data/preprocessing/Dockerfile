@@ -25,6 +25,7 @@ WORKDIR /app
 # Install dependencies
 COPY package.json /app/
 RUN npm install
+RUN npm run pre-build
 
 # Copy source code
 COPY . /app/
