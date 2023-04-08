@@ -3,6 +3,8 @@ version: "3"
 services:
   fpena_preprocessing:
     image: fpena_preprocessing
+    dns:
+      - 8.8.8.8
     build: .
     restart: "no"
     command: npm run start
