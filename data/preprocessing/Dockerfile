@@ -1,11 +1,5 @@
-# Prepare hashdeep dependency
-FROM alpine:3.17
-
-WORKDIR /root
-
-RUN apk add --update git autoconf automake build-base
-RUN git clone https://github.com/jessek/hashdeep.git hashdeep && \
-    cd hashdeep && sh bootstrap.sh && ./configure && make
+# Dependencies
+FROM fpena_bin_hashdeep as hashdeep
 
 # Prepare main code runner
 FROM node:16.20.0-alpine3.17
@@ -17,7 +11,7 @@ RUN mkdir -p /root/bin
 ENV PATH="$PATH:/root/bin"
 
 # Install md5deep
-COPY --from=0 /root/hashdeep/src/md5deep /root/bin/
+COPY --from=hashdeep /root/hashdeep/src/md5deep /root/bin/
 RUN chmod +x /root/bin/md5deep
 
 WORKDIR /app
