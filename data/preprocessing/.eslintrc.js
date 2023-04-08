@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-undef
 module.exports = {
     'env': {
         'browser': true,
@@ -8,6 +9,15 @@ module.exports = {
         'plugin:@typescript-eslint/recommended'
     ],
     'overrides': [
+        {
+            'files': ['*.ts'],
+            'rules': {
+                '@typescript-eslint/switch-exhaustiveness-check': 'error'
+            },
+            parserOptions: {
+                project: ['./tsconfig.json'], // Specify it only for TypeScript files
+            }
+        }
     ],
     'parser': '@typescript-eslint/parser',
     'parserOptions': {
@@ -33,6 +43,7 @@ module.exports = {
         'semi': [
             'error',
             'always'
-        ]
+        ],
+        'no-labels': 'error'
     }
 };

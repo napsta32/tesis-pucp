@@ -1,46 +1,97 @@
 import zx from 'zx';
 
-type ProcessingUnit = 'file' | 'directory';
 type CacheDataFile = {
     file: string;
     md5: string;
 };
+type CacheDataFormat = {
+    processingUnit: 'file';
+    allowedFileExtensions: string[];
+} | {
+    processingUnit: 'directory';
+    directoryIsAllowed: (directoryPath: string) => Promise<boolean>;
+};
 export type CacheData = {
     state: 'WAITING' | 'DONE' | 'BROKEN';
-
-    processingUnit: ProcessingUnit;
-    allowedFileExtensions: string[];
-
     directory: string;
     filesData: CacheDataFile[];
-};
+} & CacheDataFormat;
 export type DataInfo = {
     cacheFile: string;
     directory: string;
-    processingUnit: ProcessingUnit;
-    allowedFileExtensions: string[];
-};
+} & CacheDataFormat;
+
+export type ExecutionResult = |
+    // Everything went fine
+    'Success' | 
+    // Something went wrong
+    'Failure' | 
+    // We need to redo previous step
+    'StepBack';
 
 export abstract class Step {
     public readonly stepName: string;
-    protected inputInfo: DataInfo;
     protected inputCache: CacheData;
-    protected outputInfo: DataInfo;
     protected outputCache: CacheData;
 
     constructor(stepName: string, {inputInfo, outputInfo}: {inputInfo: DataInfo, outputInfo: DataInfo}) {
         this.stepName = stepName;
-        this.inputInfo = inputInfo;
-        this.outputInfo = outputInfo;
+        this.inputCache = Step.loadCacheFile(inputInfo);
+        this.outputCache = Step.loadCacheFile(outputInfo);
     }
 
-    protected abstract processDataUnit(filePath: string): Promise<boolean>;
+    /**
+     * @override
+     * Override this function for custom logic to filter file paths.
+     * @param _filePath File path to check
+     * @returns Whether to ignore this path in the step execution
+     */
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    protected async ignoreFilePath(filePath: string) {
+        return false;
+    }
 
-    public async execute(): Promise<void> {
-        if (this.outputCache.state === 'DONE') {
+    /**
+     * Process single file or directory from the input directory.
+     * @param filePath File path of the input to be processed
+     * @returns Status of the processing
+     */
+    protected abstract processInputUnit(filePath: string): Promise<ExecutionResult>;
+
+    /**
+     * Execute step only if output data was not ready or if `redo` flag
+     * is enabled.
+     * @param redo Redo step even if the data is valid
+     * @returns Status of the processing of all files
+     */
+    public async execute({redo}: {redo: boolean}): Promise<ExecutionResult> {
+        if (this.outputCache.state === 'DONE' && !redo) {
             // Assume nothing to do unless next step says otherwise
-            return;
+            return 'Success';
         }
+
+        // Get all files that are going to be processed
+        const files = zx.fs.readdirSync(this.inputCache.directory);
+        const fileQueue = [];
+        for (const fileName of files) {
+            const filePath = zx.path.join(this.inputCache.directory, fileName);
+            switch (this.inputCache.processingUnit) {
+            case 'directory':
+                if (await this.inputCache.directoryIsAllowed(filePath)) {
+                    fileQueue.push(fileName);
+                }
+                break;
+            case 'file':
+                if (this.inputCache.allowedFileExtensions.some(fileExt => fileName.endsWith(fileExt))) {
+                    fileQueue.push(fileName);
+                }
+                break;
+            }
+        }
+
+        // Check that the queue is valid
+
+        // Start processing all files
         throw 'Not implemented';
     }
 
@@ -68,12 +119,9 @@ export abstract class Step {
     private static loadCacheFile(dataInfo: DataInfo): CacheData {
         if (!zx.fs.exists(dataInfo.cacheFile)) {
             return {
+                ...dataInfo,
+                
                 state: 'WAITING',
-
-                processingUnit: dataInfo.processingUnit,
-                allowedFileExtensions: dataInfo.allowedFileExtensions,
-
-                directory: dataInfo.directory,
                 filesData: []
             };
         }
