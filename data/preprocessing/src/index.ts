@@ -1,8 +1,9 @@
 import 'zx/globals';
+import { StepProcess } from './StepProcess';
 
 async function main() {
-    const files = $`ls`;
-    echo(files);
+    const process = new StepProcess();
+    console.log('Process created!');
 }
 
 main();

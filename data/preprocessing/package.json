@@ -5,7 +5,9 @@
   "main": "index.ts",
   "scripts": {
     "start": "ts-node index.ts",
-    "lint": "eslint src/"
+    "transpile-test": "tsc --noEmit",
+    "lint": "eslint src/",
+    "pre-build": "npm run transpile-test && npm run lint"
   },
   "author": "",
   "license": "ISC",
