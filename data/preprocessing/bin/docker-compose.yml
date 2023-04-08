@@ -3,4 +3,5 @@ version: "3"
 services:
   fpena_bin_hashdeep:
     image: fpena_bin_hashdeep
+    context: .
     build: ./hashdeep.Dockerfile
