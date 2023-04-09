@@ -20,6 +20,7 @@ export class DecompressStep extends SingleInputStep {
         });
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     protected async processInputUnit(filePath: string): Promise<ExecutionResult> {
         // throw new Error('Method not implemented.');
         return 'Success';
