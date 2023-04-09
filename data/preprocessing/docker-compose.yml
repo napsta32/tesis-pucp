@@ -9,6 +9,7 @@ services:
     volumes:
       - h36m:/data/h36m
       - ./cache:/app/cache
+      - ./logs:/app/logs
 
 volumes:
   h36m:
