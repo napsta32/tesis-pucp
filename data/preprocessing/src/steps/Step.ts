@@ -1,6 +1,8 @@
 import * as zx from 'zx';
 import assert from 'node:assert/strict';
 
+const ROOT_DIR = process.cwd();
+
 type CacheDataFile = {
     file: string;
     md5: string;
@@ -92,7 +94,7 @@ export abstract class AbstractStep {
                 });
 
                 // Add updated cache to disk
-                zx.fs.writeJSONSync(outputCache.cacheFile, this.outputsCache[index]);
+                zx.fs.writeJSONSync(zx.path.join(ROOT_DIR, outputCache.cacheFile), this.outputsCache[index]);
             }
         }
     }
@@ -194,7 +196,7 @@ export abstract class AbstractStep {
      * @returns Cache data
      */
     protected static loadCacheFile(dataInfo: DataInfo): CacheData {
-        if (!zx.fs.exists(dataInfo.cacheFile)) {
+        if (!zx.fs.exists(zx.path.join(ROOT_DIR, dataInfo.cacheFile))) {
             let cacheDataFormat: CacheDataFormat;
             switch (dataInfo.processingUnit) {
             case 'directory':
