@@ -18,7 +18,7 @@ export type CacheData = {
     state: 'WAITING' | 'DONE' | 'BROKEN';
     cacheFile: string;
     directory: string;
-    filesData: CacheDataFile[];
+    fileList: CacheDataFile[];
 } & CacheDataFormat;
 export type DataInfo = {
     cacheFile: string;
@@ -69,7 +69,7 @@ export abstract class AbstractStep {
             });
 
             // Check known files from cache
-            const knownFileNames = outputCache.filesData.map(fileData => fileData.file);
+            const knownFileNames = outputCache.fileList.map(fileData => fileData.file);
             assert(knownFileNames.length <= allFileNames.length, 'Cached output files should not disappear from output directorys');
             assert(knownFileNames.every(fileName => allFileNames.includes(fileName)), 'Cached output files should not disappear from output directory');
 
@@ -88,7 +88,7 @@ export abstract class AbstractStep {
                 }
 
                 // Add to cached memory
-                this.outputsCache[index].filesData.push({
+                this.outputsCache[index].fileList.push({
                     file: fileName,
                     md5: fileMD5
                 });
@@ -113,11 +113,11 @@ export abstract class AbstractStep {
                     return outputCache.allowedFileExtensions.some(fileExt => fileName.endsWith(fileExt));
                 }
             });
-            const expectedFileNames = outputCache.filesData.map(fileData => fileData.file);
+            const expectedFileNames = outputCache.fileList.map(fileData => fileData.file);
             if (fileNames.length !== expectedFileNames.length || !fileNames.every(fileName => expectedFileNames.includes(fileName))) {
                 return false;
             }
-            for(const fileData of outputCache.filesData) {
+            for(const fileData of outputCache.fileList) {
                 let currentMD5: string;
                 switch(outputCache.processingUnit) {
                 case 'directory':
@@ -162,7 +162,7 @@ export abstract class AbstractStep {
         }
 
         // Check that the queue is valid
-        const expectedFileQueue: string[] = cacheData.filesData.map(fileData => fileData.file);
+        const expectedFileQueue: string[] = cacheData.fileList.map(fileData => fileData.file);
         assert.deepEqual(actualFileQueue, expectedFileQueue);
         
         // Return the file queue
@@ -221,7 +221,7 @@ export abstract class AbstractStep {
                 state: 'WAITING',
                 directory: dataInfo.directory,
                 
-                filesData: [],
+                fileList: [],
             };
             console.log(`Writing basic cache template for ${cacheFilePath}`);
             zx.fs.writeJSONSync(cacheFilePath, {
