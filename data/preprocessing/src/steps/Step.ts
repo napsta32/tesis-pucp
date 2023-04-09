@@ -199,7 +199,7 @@ export abstract class AbstractStep {
         // Create cache file if it doesn't exist in disk
         const cacheFilePath = zx.path.join(ROOT_DIR, dataInfo.cacheFile);
         if (!zx.fs.existsSync(cacheFilePath)) {
-            console.log(`Could not fine cache file ${cacheFilePath}`);
+            console.log(`Could not find cache file ${cacheFilePath}`);
             let cacheDataFormat: CacheDataFormat;
             switch (dataInfo.processingUnit) {
             case 'directory':
