@@ -38,7 +38,19 @@ export abstract class AbstractStep {
     public readonly stepName: string;
     protected outputsCache: CacheData[];
 
-    constructor(stepName: string, {outputsInfo}: {outputsInfo: DataInfo[]}) {
+    constructor(stepName: string, {
+        outputsInfo, 
+        clearOutputDirectories = false
+    }: {
+        outputsInfo: DataInfo[], 
+        clearOutputDirectories?: boolean
+    }) {
+        if (clearOutputDirectories) {
+            for (const outputInfo of outputsInfo) {
+                spawnSync('rm', ['-rf', outputInfo.directory]);
+            }
+        }
+        
         this.stepName = stepName;
         this.outputsCache = outputsInfo.map(AbstractStep.loadCacheFile);
     }
@@ -271,8 +283,16 @@ export abstract class AbstractStep {
 export abstract class SingleInputStep extends AbstractStep {
     protected inputCache: CacheData;
 
-    constructor(stepName: string, {inputInfo, outputsInfo}: {inputInfo: DataInfo, outputsInfo: DataInfo[]}) {
-        super(stepName, {outputsInfo});
+    constructor(stepName: string, {
+        inputInfo,
+        outputsInfo,
+        clearOutputDirectories = false
+    }: {
+        inputInfo: DataInfo,
+        outputsInfo: DataInfo[],
+        clearOutputDirectories?: boolean
+    }) {
+        super(stepName, {outputsInfo, clearOutputDirectories});
         this.inputCache = AbstractStep.loadCacheFile(inputInfo);
     }
 
@@ -333,8 +353,16 @@ export abstract class SingleInputStep extends AbstractStep {
 export abstract class MultiInputStep<TInputType = string[], TNextInput = unknown> extends AbstractStep {
     protected inputsCache: CacheData[];
 
-    constructor(stepName: string, {inputsInfo, outputsInfo}: {inputsInfo: DataInfo[], outputsInfo: DataInfo[]}) {
-        super(stepName, {outputsInfo});
+    constructor(stepName: string, {
+        inputsInfo,
+        outputsInfo,
+        clearOutputDirectories = false
+    }: {
+        inputsInfo: DataInfo[], 
+        outputsInfo: DataInfo[],
+        clearOutputDirectories?: boolean
+    }) {
+        super(stepName, {outputsInfo, clearOutputDirectories});
         this.inputsCache = inputsInfo.map(AbstractStep.loadCacheFile);
     }
 

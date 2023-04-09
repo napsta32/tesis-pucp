@@ -22,9 +22,9 @@ export class DecompressStep extends SingleInputStep {
                     processingUnit: 'directory',
                     directoryIsAllowed: async () => true
                 }
-            ]
+            ],
+            clearOutputDirectories: true
         });
-        spawnSync('rm', ['-rf', POSES_D2_POSITIONS_DIR + '/*']);
     }
 
     protected async processInputUnit(filePath: string): Promise<ExecutionResult> {
