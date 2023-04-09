@@ -29,7 +29,7 @@ export class DecompressStep extends SingleInputStep {
 
     protected async processInputUnit(filePath: string): Promise<ExecutionResult> {
         const fileName = path.basename(filePath);
-        if (!fileName.startsWith('Poses_D2_Positions')) {
+        if (fileName.startsWith('Poses_D2_Positions')) {
             console.log(`Decompressing zipped file ${filePath}`);
             spawnSync('tar', ['-xzf', filePath, '-C', POSES_D2_POSITIONS_DIR]);
         }
