@@ -89,10 +89,10 @@ export abstract class AbstractStep {
                 }
                 
                 // Add to cached memory
-                console.log(`Adding output file ${fileName} with md5 ${fileMD5} to cache`);
+                console.log(`Adding output file ${fileName} with md5 ${fileMD5.toString()} to cache`);
                 this.outputsCache[index].fileList.push({
                     file: fileName,
-                    md5: fileMD5
+                    md5: fileMD5.toString()
                 });
 
                 // Add updated cache to disk
