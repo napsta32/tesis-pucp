@@ -24,7 +24,7 @@ export class DecompressStep extends SingleInputStep {
                 }
             ]
         });
-        spawnSync('rm', ['-rf', POSES_D2_POSITIONS_DIR]);
+        spawnSync('rm', ['-rf', POSES_D2_POSITIONS_DIR + '/*']);
     }
 
     protected async processInputUnit(filePath: string): Promise<ExecutionResult> {
