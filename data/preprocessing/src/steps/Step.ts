@@ -198,6 +198,7 @@ export abstract class AbstractStep {
     protected static loadCacheFile(dataInfo: DataInfo): CacheData {
         const cacheFilePath = zx.path.join(ROOT_DIR, dataInfo.cacheFile);
         if (!zx.fs.exists(cacheFilePath)) {
+            console.log(`Could not fine cache file ${cacheFilePath}`);
             let cacheDataFormat: CacheDataFormat;
             switch (dataInfo.processingUnit) {
             case 'directory':
@@ -222,6 +223,7 @@ export abstract class AbstractStep {
                 
                 filesData: [],
             };
+            console.log(`Writing basic cache template for ${cacheFilePath}`);
             zx.fs.writeJSONSync(cacheFilePath, {
                 ...cacheData,
                 // Remove functions
