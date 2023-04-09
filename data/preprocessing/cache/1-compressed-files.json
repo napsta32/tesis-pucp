@@ -1,5 +1,8 @@
 {
+  "cacheFile": "./cache/1-compressed-files.json",
   "directory": "/data/h36m/raw/",
+  "processingUnit": "file",
+  "allowedFileExtensions": [".tgz"],
   "fileList": [
     {
       "file": "Poses_D2_Positions_S1.tgz",
