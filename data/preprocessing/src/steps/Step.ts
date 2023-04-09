@@ -227,7 +227,7 @@ export abstract class AbstractStep {
                 directoryIsAllowed: undefined
             });
         }
-        const cacheRawData = zx.fs.readFileSync(dataInfo.cacheFile).toString();
+        const cacheRawData = zx.fs.readFileSync(zx.path.join(ROOT_DIR, dataInfo.cacheFile)).toString();
         const cacheData = JSON.parse(cacheRawData) as CacheData;
         switch(dataInfo.processingUnit) {
         case 'directory':
