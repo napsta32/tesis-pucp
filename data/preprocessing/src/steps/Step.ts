@@ -1,4 +1,5 @@
 import zx from 'zx';
+import assert from 'node:assert/strict';
 
 type CacheDataFile = {
     file: string;
@@ -32,12 +33,12 @@ export type ExecutionResult = |
 export abstract class Step {
     public readonly stepName: string;
     protected inputCache: CacheData;
-    protected outputCache: CacheData;
+    protected outputsCache: CacheData[];
 
-    constructor(stepName: string, {inputInfo, outputInfo}: {inputInfo: DataInfo, outputInfo: DataInfo}) {
+    constructor(stepName: string, {inputInfo, outputsInfo}: {inputInfo: DataInfo, outputsInfo: DataInfo[]}) {
         this.stepName = stepName;
         this.inputCache = Step.loadCacheFile(inputInfo);
-        this.outputCache = Step.loadCacheFile(outputInfo);
+        this.outputsCache = outputsInfo.map(Step.loadCacheFile);
     }
 
     /**
@@ -65,7 +66,8 @@ export abstract class Step {
      * @returns Status of the processing of all files
      */
     public async execute({redo}: {redo: boolean}): Promise<ExecutionResult> {
-        if (this.outputCache.state === 'DONE' && !redo) {
+        const allOutputsAreDone = this.outputsCache.every(outputCache => outputCache.state === 'DONE');
+        if (allOutputsAreDone && !redo) {
             // Assume nothing to do unless next step says otherwise
             return 'Success';
         }
@@ -96,36 +98,97 @@ export abstract class Step {
     }
 
     public async checkOutputFiles(): Promise<boolean> {
-        for(const fileData of this.outputCache.filesData) {
-            const currentMD5 = (await (zx.$`md5sum ${zx.path.join(this.outputCache.directory, fileData.file)}`)).toString();
-            // If md5 is not the same from the original, we need to redo some work
-            if (currentMD5 !== fileData.md5) {
+        for (const outputCache of this.outputsCache) {
+            const fileNames: string[] = zx.fs.readdirSync(outputCache.directory).filter(fileName => {
+                switch (outputCache.processingUnit) {
+                case 'directory':
+                    return outputCache.directoryIsAllowed(zx.path.join(outputCache.directory, fileName));
+                case 'file':
+                    return outputCache.allowedFileExtensions.some(fileExt => fileName.endsWith(fileExt));
+                }
+            });
+            const expectedFileNames = outputCache.filesData.map(fileData => fileData.file);
+            if (fileNames.length !== expectedFileNames.length || !fileNames.every(fileName => expectedFileNames.includes(fileName))) {
                 return false;
+            }
+            for(const fileData of outputCache.filesData) {
+                let currentMD5: string;
+                switch(outputCache.processingUnit) {
+                case 'directory':
+                    currentMD5 = await Step.getDirectoryMD5(fileData.file);
+                    break;
+                case 'file':
+                    currentMD5 = await Step.getFileMD5(fileData.file);
+                    break;
+                }
+                // If md5 is not the same from the original, we need to redo some work
+                if (currentMD5 !== fileData.md5) {
+                    return false;
+                }
             }
         }
         return true;
     }
 
-    private static async getFileMD5(filePath: string) {
+    private static async getFileMD5(filePath: string): Promise<string> {
         const output = await zx.$`md5sum ${filePath}`;
         return output.toString().trim();
     }
 
-    private static async getDirectoryMD5(directoryPath: string) {
+    private static async getDirectoryMD5(directoryPath: string): Promise<string> {
         const output = await zx.$`md5deep -r -l ${directoryPath} | sort | md5sum`;
         return output.toString().trim();
     }
 
+    /**
+     * Load cache from previous builds. If cache does not exists, cache
+     * file will be created.
+     * @param dataInfo Information about where the cache is located and what it contains
+     * @returns Cache data
+     */
     private static loadCacheFile(dataInfo: DataInfo): CacheData {
         if (!zx.fs.exists(dataInfo.cacheFile)) {
-            return {
-                ...dataInfo,
-                
+            let cacheDataFormat: CacheDataFormat;
+            switch (dataInfo.processingUnit) {
+            case 'directory':
+                cacheDataFormat = {
+                    processingUnit: 'directory',
+                    directoryIsAllowed: dataInfo.directoryIsAllowed
+                };
+                break;
+            case 'file':
+                cacheDataFormat = {
+                    processingUnit: 'file',
+                    allowedFileExtensions: dataInfo.allowedFileExtensions
+                };
+                break;
+            }
+
+            const cacheData: CacheData = {
+                ...cacheDataFormat,
                 state: 'WAITING',
-                filesData: []
+                directory: dataInfo.directory,
+                
+                filesData: [],
             };
+            zx.fs.writeJSONSync(dataInfo.cacheFile, {
+                ...cacheData,
+                // Remove functions
+                directoryIsAllowed: undefined
+            });
         }
         const cacheRawData = zx.fs.readFileSync(dataInfo.cacheFile).toString();
-        return JSON.parse(cacheRawData) as CacheData;
+        const cacheData = JSON.parse(cacheRawData) as CacheData;
+        switch(dataInfo.processingUnit) {
+        case 'directory':
+            assert(cacheData.processingUnit === 'directory');
+            cacheData.directoryIsAllowed = dataInfo.directoryIsAllowed;
+            break;
+        case 'file':
+            assert(cacheData.processingUnit === 'file');
+            cacheData.allowedFileExtensions = dataInfo.allowedFileExtensions;
+            break;
+        }
+        return cacheData;
     }
 }
