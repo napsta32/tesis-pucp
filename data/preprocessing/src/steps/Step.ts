@@ -1,4 +1,5 @@
 import * as zx from 'zx';
+import { spawnSync } from 'node:child_process';
 import assert from 'node:assert/strict';
 
 const ROOT_DIR = process.cwd();
@@ -104,9 +105,8 @@ export abstract class AbstractStep {
      */
     public async logOuputFiles(): Promise<void> {
         for (const outputCache of this.outputsCache) {
-            const actualDirectory = outputCache.directory;
             const logFilePath = zx.path.join(ROOT_DIR, './logs/', zx.path.basename(outputCache.directory) + '.log');
-            const logData = (await zx.$`tree ${actualDirectory}`).toString();
+            const logData: string = spawnSync('tree', [outputCache.directory]).output.toString();
             zx.fs.writeFileSync(logFilePath, logData);
         }
     }
@@ -187,7 +187,7 @@ export abstract class AbstractStep {
      * @returns md5 string
      */
     protected static async getFileMD5(filePath: string): Promise<string> {
-        const output = await zx.$`md5sum ${filePath}`;
+        const output = spawnSync('md5sum', [filePath]).output.toString();
         return output.toString().trim();
     }
 
@@ -197,7 +197,7 @@ export abstract class AbstractStep {
      * @returns md5 string
      */
     protected static async getDirectoryMD5(directoryPath: string): Promise<string> {
-        const output = await zx.$`md5deep -r -l ${directoryPath} | sort | md5sum`;
+        const output = spawnSync('md5deep', ['-r', '-l', directoryPath, '|', 'sort', '|', 'md5sum']);
         return output.toString().trim();
     }
 
