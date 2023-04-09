@@ -8,6 +8,7 @@ services:
     command: npm run start
     volumes:
       - h36m:/data/h36m
+      - ./cache:/app/cache
 
 volumes:
   h36m:
