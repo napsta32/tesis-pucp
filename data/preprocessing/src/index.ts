@@ -1,4 +1,3 @@
-import 'zx/globals';
 import { StepProcess } from './StepProcess';
 import { DecompressStep } from './steps/DecompressStep';
 
