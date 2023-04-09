@@ -1,4 +1,4 @@
-import zx from 'zx';
+import * as zx from 'zx';
 import assert from 'node:assert/strict';
 
 type CacheDataFile = {
