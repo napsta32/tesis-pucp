@@ -211,7 +211,7 @@ export abstract class AbstractStep {
      * @returns md5 string
      */
     protected static async getDirectoryMD5(directoryPath: string): Promise<string> {
-        const output = spawnSync('md5deep', ['-r', '-l', directoryPath, '|', 'sort', '|', 'md5sum']);
+        const output: string = spawnSync('md5deep', ['-r', '-l', directoryPath, '|', 'sort', '|', 'md5sum']).output.toString();
         return output.toString().trim();
     }
 
