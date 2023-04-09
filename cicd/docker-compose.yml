@@ -4,7 +4,7 @@ services:
   fpenac-cicd:
     container_name: fpenac-cicd # Single container is expected
     build: .
-    restart: on-failure
+    restart: unless-stopped
     dns:
       - 8.8.8.8
     ports:
