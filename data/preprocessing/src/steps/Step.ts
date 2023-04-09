@@ -221,7 +221,7 @@ export abstract class AbstractStep {
                 
                 filesData: [],
             };
-            zx.fs.writeJSONSync(dataInfo.cacheFile, {
+            zx.fs.writeJSONSync(zx.path.join(ROOT_DIR, dataInfo.cacheFile), {
                 ...cacheData,
                 // Remove functions
                 directoryIsAllowed: undefined
