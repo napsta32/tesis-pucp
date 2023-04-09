@@ -1,13 +1,13 @@
-import { Step } from './steps/Step';
+import { AbstractStep } from './steps/Step';
 
 export class StepProcess {
-    readonly steps: Step[];
+    readonly steps: AbstractStep[];
 
-    constructor(steps: Step[] = []) {
+    constructor(steps: AbstractStep[] = []) {
         this.steps = steps;
     }
 
-    addStep(step: Step) {
+    addStep(step: AbstractStep) {
         this.steps.push(step);
     }
 

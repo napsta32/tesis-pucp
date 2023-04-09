@@ -101,7 +101,7 @@ export abstract class AbstractStep {
      * Check that the output files md5 match the cached ones.
      * @returns Whether the output directory matches the cache
      */
-    protected async checkOutputFiles(): Promise<boolean> {
+    public async checkOutputFiles(): Promise<boolean> {
         for (const outputCache of this.outputsCache) {
             const fileNames: string[] = zx.fs.readdirSync(outputCache.directory).filter(fileName => {
                 switch (outputCache.processingUnit) {
