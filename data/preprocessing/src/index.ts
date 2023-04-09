@@ -1,5 +1,5 @@
-import { StepProcess } from './StepProcess';
-import { DecompressStep } from './steps/DecompressStep';
+import { StepProcess } from './StepProcess.js';
+import { DecompressStep } from './steps/DecompressStep.js';
 
 async function main() {
     const process = new StepProcess();

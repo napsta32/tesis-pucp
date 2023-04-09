@@ -1,4 +1,4 @@
-import { ExecutionResult, SingleInputStep } from './Step';
+import { ExecutionResult, SingleInputStep } from './Step.js';
 
 export class DecompressStep extends SingleInputStep {
     constructor() {

@@ -1,4 +1,4 @@
-import { AbstractStep } from './steps/Step';
+import { AbstractStep } from './steps/Step.js';
 
 export class StepProcess {
     readonly steps: AbstractStep[];

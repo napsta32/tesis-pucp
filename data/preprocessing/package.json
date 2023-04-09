@@ -2,9 +2,10 @@
   "name": "preprocessing",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
+  "type": "module",
+  "main": "./src/index.ts",
   "scripts": {
-    "start": "ts-node src/index.ts",
+    "start": "ts-node --esm src/index.ts",
     "transpile-test": "tsc --noEmit",
     "lint": "eslint src/",
     "pre-build": "npm run transpile-test && npm run lint"
