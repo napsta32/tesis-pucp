@@ -15,7 +15,7 @@ export class StepProcess {
         for (const step of this.steps) {
             await step.execute({redo: false});
         }
-        const lastStep = this.steps[this.steps.length];
+        const lastStep = this.steps[this.steps.length-1];
         return await lastStep.checkOutputFiles();
     }
 
