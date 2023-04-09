@@ -6,9 +6,10 @@ WORKDIR /root
 RUN apk add --update git autoconf automake build-base
 
 # Use dns to support rootless docker
-COPY ./dns.conf /root/dns.conf
-ENV RES_OPTIONS="conf-file /root/.dns.conf"
-ENV RESOLV_CONF="/root/.dns.conf"
+COPY ./.dns /root/.dns
+ENV RES_OPTIONS="conf-file /root/.dns"
+ENV RESOLV_CONF="/root/.dns"
+RUN rc-service dnsd restart
 
 # Install hashdeep by compiling source code
 RUN git clone https://github.com/jessek/hashdeep.git hashdeep
