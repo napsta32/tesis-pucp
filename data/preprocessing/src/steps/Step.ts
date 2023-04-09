@@ -120,7 +120,7 @@ export abstract class AbstractStep {
         for (const outputCache of this.outputsCache) {
             zx.fs.ensureDirSync(zx.path.join(ROOT_DIR, './logs/'));
             const logFilePath = zx.path.join(ROOT_DIR, './logs/', zx.path.basename(outputCache.directory) + '.log');
-            const logData: string = spawnSync('tree', [outputCache.directory]).output.toString();
+            const logData: string = spawnSync('tree', [outputCache.directory]).stdout.toString();
             zx.fs.writeFileSync(logFilePath, logData);
         }
     }
@@ -201,7 +201,7 @@ export abstract class AbstractStep {
      * @returns md5 string
      */
     protected static async getFileMD5(filePath: string): Promise<string> {
-        const output = spawnSync('md5sum', [filePath]).output.toString();
+        const output = spawnSync('md5sum', [filePath]).stdout.toString();
         return output.toString().trim();
     }
 
@@ -211,7 +211,7 @@ export abstract class AbstractStep {
      * @returns md5 string
      */
     protected static async getDirectoryMD5(directoryPath: string): Promise<string> {
-        const output: string = spawnSync('sh', ['-c', `md5deep -r -l ${directoryPath} | sort | md5sum`]).output.toString();
+        const output: string = spawnSync('sh', ['-c', `md5deep -r -l ${directoryPath} | sort | md5sum | awk '{ print $1 }'`]).stdout.toString();
         return output.toString().trim();
     }
 
