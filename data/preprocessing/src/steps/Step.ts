@@ -197,7 +197,7 @@ export abstract class AbstractStep {
      */
     protected static loadCacheFile(dataInfo: DataInfo): CacheData {
         const cacheFilePath = zx.path.join(ROOT_DIR, dataInfo.cacheFile);
-        if (!zx.fs.exists(cacheFilePath)) {
+        if (!zx.fs.existsSync(cacheFilePath)) {
             console.log(`Could not fine cache file ${cacheFilePath}`);
             let cacheDataFormat: CacheDataFormat;
             switch (dataInfo.processingUnit) {
