@@ -196,6 +196,7 @@ export abstract class AbstractStep {
      * @returns Cache data
      */
     protected static loadCacheFile(dataInfo: DataInfo): CacheData {
+        // Create cache file if it doesn't exist in disk
         const cacheFilePath = zx.path.join(ROOT_DIR, dataInfo.cacheFile);
         if (!zx.fs.existsSync(cacheFilePath)) {
             console.log(`Could not fine cache file ${cacheFilePath}`);
@@ -230,6 +231,13 @@ export abstract class AbstractStep {
                 directoryIsAllowed: undefined
             });
         }
+
+        // Create data directory in case it doesn't exist
+        if (!zx.fs.existsSync(dataInfo.directory)) {
+            zx.fs.ensureDir(dataInfo.directory);
+        }
+
+        // Read existent cache file
         const cacheRawData = zx.fs.readFileSync(cacheFilePath).toString();
         const cacheData = JSON.parse(cacheRawData) as CacheData;
         switch(dataInfo.processingUnit) {
