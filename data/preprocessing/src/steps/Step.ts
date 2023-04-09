@@ -196,7 +196,8 @@ export abstract class AbstractStep {
      * @returns Cache data
      */
     protected static loadCacheFile(dataInfo: DataInfo): CacheData {
-        if (!zx.fs.exists(zx.path.join(ROOT_DIR, dataInfo.cacheFile))) {
+        const cacheFilePath = zx.path.join(ROOT_DIR, dataInfo.cacheFile);
+        if (!zx.fs.exists(cacheFilePath)) {
             let cacheDataFormat: CacheDataFormat;
             switch (dataInfo.processingUnit) {
             case 'directory':
@@ -221,13 +222,13 @@ export abstract class AbstractStep {
                 
                 filesData: [],
             };
-            zx.fs.writeJSONSync(zx.path.join(ROOT_DIR, dataInfo.cacheFile), {
+            zx.fs.writeJSONSync(cacheFilePath, {
                 ...cacheData,
                 // Remove functions
                 directoryIsAllowed: undefined
             });
         }
-        const cacheRawData = zx.fs.readFileSync(zx.path.join(ROOT_DIR, dataInfo.cacheFile)).toString();
+        const cacheRawData = zx.fs.readFileSync(cacheFilePath).toString();
         const cacheData = JSON.parse(cacheRawData) as CacheData;
         switch(dataInfo.processingUnit) {
         case 'directory':
