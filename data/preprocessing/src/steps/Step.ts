@@ -87,8 +87,9 @@ export abstract class AbstractStep {
                     fileMD5 = await AbstractStep.getFileMD5(zx.path.join(outputCache.directory, fileName));
                     break;
                 }
-
+                
                 // Add to cached memory
+                console.log(`Adding output file ${fileName} with md5 ${fileMD5} to cache`);
                 this.outputsCache[index].fileList.push({
                     file: fileName,
                     md5: fileMD5
