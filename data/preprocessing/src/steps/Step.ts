@@ -100,6 +100,16 @@ export abstract class AbstractStep {
     }
 
     /**
+     * Generate a log file with all the output files and put them in the logs directory
+     */
+    public async logOuputFiles(): Promise<void> {
+        for (const outputCache of this.outputsCache) {
+            const logFilePath = zx.path.join(ROOT_DIR, './logs/', zx.path.basename(outputCache.directory) + '.log');
+            await zx.$`tree ${outputCache.directory} > ${logFilePath}`;
+        }
+    }
+
+    /**
      * Check that the output files md5 match the cached ones.
      * @returns Whether the output directory matches the cache
      */
