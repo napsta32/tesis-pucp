@@ -1,4 +1,10 @@
 import { ExecutionResult, SingleInputStep } from './Step.js';
+import { spawnSync } from 'node:child_process';
+import * as path from 'path';
+
+// Using global variables because super doesn't support 'this' keyword
+// Ideally this could be located as readonly private variables inside the step class
+const POSES_D2_POSITIONS_DIR = '/data/h36m/decompressed-poses-d2-positions';
 
 export class DecompressStep extends SingleInputStep {
     constructor() {
@@ -11,8 +17,8 @@ export class DecompressStep extends SingleInputStep {
             },
             outputsInfo: [
                 {
-                    directory: '/data/h36m/decompressed-videos',
-                    cacheFile: './cache/2-decompressed-videos.json',
+                    directory: POSES_D2_POSITIONS_DIR,
+                    cacheFile: './cache/2a-decompressed-poses-d2-positions.json',
                     processingUnit: 'directory',
                     directoryIsAllowed: async () => true
                 }
@@ -20,8 +26,12 @@ export class DecompressStep extends SingleInputStep {
         });
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     protected async processInputUnit(filePath: string): Promise<ExecutionResult> {
+        const fileName = path.basename(filePath);
+        if (!fileName.startsWith('Poses_D2_Positions')) {
+            spawnSync('tar', ['-xzf', filePath, '-C', POSES_D2_POSITIONS_DIR]);
+        }
+        
         // throw new Error('Method not implemented.');
         return 'Success';
     }

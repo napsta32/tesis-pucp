@@ -4,7 +4,7 @@ FROM fpena_bin_hashdeep as hashdeep
 # Prepare main code runner
 FROM node:16.20.0-alpine3.17
 
-RUN apk add --update ffmpeg python3 tree
+RUN apk add --update tree tar
 
 # Use /root/bin for binaries
 RUN mkdir -p /root/bin
