@@ -1,0 +1,36 @@
+{
+  "processingUnit": "directory",
+  "cacheFile": "./cache/2b-decompressed-poses-d3-positions-mono-universal.json",
+  "state": "DONE",
+  "directory": "/data/h36m/2b-decompressed-poses-d3-positions-mono-universal",
+  "fileList": [
+    {
+      "file": "S1",
+      "md5": "69e46abd8cba0921d0d55b3b55edcdb4"
+    },
+    {
+      "file": "S11",
+      "md5": "ca407fffd34033d15d049f6bf48fce75"
+    },
+    {
+      "file": "S5",
+      "md5": "4bf697953d0b41259ea72183caf2000f"
+    },
+    {
+      "file": "S6",
+      "md5": "329590fd13fd47b870b86b98c98ece7e"
+    },
+    {
+      "file": "S7",
+      "md5": "d7607428bf4cb1e71def2f57634b011f"
+    },
+    {
+      "file": "S8",
+      "md5": "a58fce003fbbce1d7b9f773d1104dd90"
+    },
+    {
+      "file": "S9",
+      "md5": "e9eb0761899ab41cd71b7e52812f5b70"
+    }
+  ]
+}

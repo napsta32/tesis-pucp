@@ -1,0 +1,36 @@
+{
+  "processingUnit": "directory",
+  "cacheFile": "./cache/2e-decompressed-videos.json",
+  "state": "DONE",
+  "directory": "/data/h36m/2e-decompressed-videos",
+  "fileList": [
+    {
+      "file": "S1",
+      "md5": "fbd7102041522c3fa472c0eae6a14d3e"
+    },
+    {
+      "file": "S11",
+      "md5": "45fa702227d626da00958bfd2ceeb800"
+    },
+    {
+      "file": "S5",
+      "md5": "326cbf345f6bc4231705913756459b0b"
+    },
+    {
+      "file": "S6",
+      "md5": "f154811e1c71f6bd9418ecb8f7f9de17"
+    },
+    {
+      "file": "S7",
+      "md5": "4976830616fda0fc960e588bbc4a30d0"
+    },
+    {
+      "file": "S8",
+      "md5": "92de813988556f66548e1103215ab74f"
+    },
+    {
+      "file": "S9",
+      "md5": "706335cca6f356b6a8971acf6851561e"
+    }
+  ]
+}

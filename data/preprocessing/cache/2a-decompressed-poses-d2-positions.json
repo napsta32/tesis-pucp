@@ -1,0 +1,36 @@
+{
+  "processingUnit": "directory",
+  "cacheFile": "./cache/2a-decompressed-poses-d2-positions.json",
+  "state": "DONE",
+  "directory": "/data/h36m/2a-decompressed-poses-d2-positions",
+  "fileList": [
+    {
+      "file": "S1",
+      "md5": "57c35deffcebe624ad08b5ecf4386815"
+    },
+    {
+      "file": "S11",
+      "md5": "34a6791792c85db6bbce16737cafe8cd"
+    },
+    {
+      "file": "S5",
+      "md5": "a59b347469bc79ca8579c941feef39ec"
+    },
+    {
+      "file": "S6",
+      "md5": "b8327e96d0064c3fc403156f0e8b9ec6"
+    },
+    {
+      "file": "S7",
+      "md5": "8ac5ab54a36dc93c27890fef2b12ba90"
+    },
+    {
+      "file": "S8",
+      "md5": "913ad4bbf55a403a4808298c205a59af"
+    },
+    {
+      "file": "S9",
+      "md5": "40415d7f9f91a01efc50f6387de70140"
+    }
+  ]
+}
