@@ -77,5 +77,4 @@ export class DecompressStep extends SingleInputStep {
         }
         return 'Success';
     }
-
 }
