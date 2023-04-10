@@ -120,8 +120,7 @@ export abstract class AbstractStep {
         for (const outputCache of this.outputsCache) {
             zx.fs.ensureDirSync(zx.path.join(ROOT_DIR, './logs/'));
             const logFilePath = zx.path.join(ROOT_DIR, './logs/', zx.path.basename(outputCache.directory) + '.log');
-            const logData: string = spawnSync('tree', [outputCache.directory]).stdout.toString();
-            zx.fs.writeFileSync(logFilePath, logData);
+            spawnSync('sh', ['-c', `tree ${outputCache.directory} > ${logFilePath}`]);
         }
     }
 
