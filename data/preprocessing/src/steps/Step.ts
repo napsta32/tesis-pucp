@@ -40,7 +40,7 @@ export abstract class AbstractStep {
 
     constructor(stepName: string, {
         outputsInfo, 
-        clearOutputDirectories = true
+        clearOutputDirectories = false
     }: {
         outputsInfo: DataInfo[], 
         clearOutputDirectories?: boolean
@@ -52,7 +52,8 @@ export abstract class AbstractStep {
         if (clearOutputDirectories) {
             for (const outputCache of this.outputsCache) {
                 if (outputCache.state !== 'DONE') {
-                    spawnSync('rm', ['-rf', zx.path.join(outputCache.directory, '*')]);
+                    spawnSync('rm', ['-rf', outputCache.directory]);
+                    spawnSync('mkdir', ['-p', outputCache.directory]);
                 }
             }
         }
