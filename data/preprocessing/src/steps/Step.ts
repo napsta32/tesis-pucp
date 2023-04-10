@@ -254,7 +254,7 @@ export abstract class AbstractStep {
                 ...cacheData,
                 // Remove functions
                 directoryIsAllowed: undefined
-            });
+            }, {spaces: 4, EOL: '\n', encoding: 'utf8'});
         }
 
         // Create data directory in case it doesn't exist
