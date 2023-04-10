@@ -116,7 +116,7 @@ export abstract class AbstractStep {
                 ...this.outputsCache[index],
                 directoryIsAllowed: undefined
             };
-            zx.fs.writeFileSync(zx.path.join(ROOT_DIR, outputCache.cacheFile), JSON.stringify(jsonData, null, 2));
+            zx.fs.writeFileSync(zx.path.join(ROOT_DIR, outputCache.cacheFile), JSON.stringify(jsonData, null, 2) + '\n');
         }
     }
 
@@ -262,7 +262,7 @@ export abstract class AbstractStep {
                 // Remove functions
                 directoryIsAllowed: undefined
             };
-            zx.fs.writeFileSync(cacheFilePath, JSON.stringify(jsonData, null, 2));
+            zx.fs.writeFileSync(cacheFilePath, JSON.stringify(jsonData, null, 2) + '\n');
         }
 
         // Create data directory in case it doesn't exist

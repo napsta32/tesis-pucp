@@ -1,7 +1,7 @@
 {
   "processingUnit": "directory",
   "cacheFile": "./cache/2a-decompressed-poses-d2-positions.json",
-  "state": "DONE",
+  "state": "BROKEN",
   "directory": "/data/h36m/decompressed-poses-d2-positions",
   "fileList": [
     {
