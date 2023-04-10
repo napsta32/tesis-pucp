@@ -1,0 +1,1289 @@
+/data/h36m/2d-decompressed-segments-mat-gt-bb
+├── S1
+│   └── MySegmentsMat
+│       └── ground_truth_bb
+│           ├── Directions 1.54138969.mat
+│           ├── Directions 1.55011271.mat
+│           ├── Directions 1.58860488.mat
+│           ├── Directions 1.60457274.mat
+│           ├── Directions.54138969.mat
+│           ├── Directions.55011271.mat
+│           ├── Directions.58860488.mat
+│           ├── Directions.60457274.mat
+│           ├── Discussion 1.54138969.mat
+│           ├── Discussion 1.55011271.mat
+│           ├── Discussion 1.58860488.mat
+│           ├── Discussion 1.60457274.mat
+│           ├── Discussion.54138969.mat
+│           ├── Discussion.55011271.mat
+│           ├── Discussion.58860488.mat
+│           ├── Discussion.60457274.mat
+│           ├── Eating 2.54138969.mat
+│           ├── Eating 2.55011271.mat
+│           ├── Eating 2.58860488.mat
+│           ├── Eating 2.60457274.mat
+│           ├── Eating.54138969.mat
+│           ├── Eating.55011271.mat
+│           ├── Eating.58860488.mat
+│           ├── Eating.60457274.mat
+│           ├── Greeting 1.54138969.mat
+│           ├── Greeting 1.55011271.mat
+│           ├── Greeting 1.58860488.mat
+│           ├── Greeting 1.60457274.mat
+│           ├── Greeting.54138969.mat
+│           ├── Greeting.55011271.mat
+│           ├── Greeting.58860488.mat
+│           ├── Greeting.60457274.mat
+│           ├── Phoning 1.54138969.mat
+│           ├── Phoning 1.55011271.mat
+│           ├── Phoning 1.58860488.mat
+│           ├── Phoning 1.60457274.mat
+│           ├── Phoning.54138969.mat
+│           ├── Phoning.55011271.mat
+│           ├── Phoning.58860488.mat
+│           ├── Phoning.60457274.mat
+│           ├── Posing 1.54138969.mat
+│           ├── Posing 1.55011271.mat
+│           ├── Posing 1.58860488.mat
+│           ├── Posing 1.60457274.mat
+│           ├── Posing.54138969.mat
+│           ├── Posing.55011271.mat
+│           ├── Posing.58860488.mat
+│           ├── Posing.60457274.mat
+│           ├── Purchases 1.54138969.mat
+│           ├── Purchases 1.55011271.mat
+│           ├── Purchases 1.58860488.mat
+│           ├── Purchases 1.60457274.mat
+│           ├── Purchases.54138969.mat
+│           ├── Purchases.55011271.mat
+│           ├── Purchases.58860488.mat
+│           ├── Purchases.60457274.mat
+│           ├── Sitting 1.54138969.mat
+│           ├── Sitting 1.55011271.mat
+│           ├── Sitting 1.58860488.mat
+│           ├── Sitting 1.60457274.mat
+│           ├── Sitting 2.54138969.mat
+│           ├── Sitting 2.55011271.mat
+│           ├── Sitting 2.58860488.mat
+│           ├── Sitting 2.60457274.mat
+│           ├── SittingDown 2.54138969.mat
+│           ├── SittingDown 2.55011271.mat
+│           ├── SittingDown 2.58860488.mat
+│           ├── SittingDown 2.60457274.mat
+│           ├── SittingDown.54138969.mat
+│           ├── SittingDown.55011271.mat
+│           ├── SittingDown.58860488.mat
+│           ├── SittingDown.60457274.mat
+│           ├── Smoking 1.54138969.mat
+│           ├── Smoking 1.55011271.mat
+│           ├── Smoking 1.58860488.mat
+│           ├── Smoking 1.60457274.mat
+│           ├── Smoking.54138969.mat
+│           ├── Smoking.55011271.mat
+│           ├── Smoking.58860488.mat
+│           ├── Smoking.60457274.mat
+│           ├── TakingPhoto 1.54138969.mat
+│           ├── TakingPhoto 1.55011271.mat
+│           ├── TakingPhoto 1.58860488.mat
+│           ├── TakingPhoto 1.60457274.mat
+│           ├── TakingPhoto.54138969.mat
+│           ├── TakingPhoto.55011271.mat
+│           ├── TakingPhoto.58860488.mat
+│           ├── TakingPhoto.60457274.mat
+│           ├── Waiting 1.54138969.mat
+│           ├── Waiting 1.55011271.mat
+│           ├── Waiting 1.58860488.mat
+│           ├── Waiting 1.60457274.mat
+│           ├── Waiting.54138969.mat
+│           ├── Waiting.55011271.mat
+│           ├── Waiting.58860488.mat
+│           ├── Waiting.60457274.mat
+│           ├── WalkTogether 1.54138969.mat
+│           ├── WalkTogether 1.55011271.mat
+│           ├── WalkTogether 1.58860488.mat
+│           ├── WalkTogether 1.60457274.mat
+│           ├── WalkTogether.54138969.mat
+│           ├── WalkTogether.55011271.mat
+│           ├── WalkTogether.58860488.mat
+│           ├── WalkTogether.60457274.mat
+│           ├── Walking 1.54138969.mat
+│           ├── Walking 1.55011271.mat
+│           ├── Walking 1.58860488.mat
+│           ├── Walking 1.60457274.mat
+│           ├── Walking.54138969.mat
+│           ├── Walking.55011271.mat
+│           ├── Walking.58860488.mat
+│           ├── Walking.60457274.mat
+│           ├── WalkingDog 1.54138969.mat
+│           ├── WalkingDog 1.55011271.mat
+│           ├── WalkingDog 1.58860488.mat
+│           ├── WalkingDog 1.60457274.mat
+│           ├── WalkingDog.54138969.mat
+│           ├── WalkingDog.55011271.mat
+│           ├── WalkingDog.58860488.mat
+│           ├── WalkingDog.60457274.mat
+│           ├── _ALL 1.54138969.mat
+│           ├── _ALL 1.55011271.mat
+│           ├── _ALL 1.58860488.mat
+│           ├── _ALL 1.60457274.mat
+│           ├── _ALL.54138969.mat
+│           ├── _ALL.55011271.mat
+│           ├── _ALL.58860488.mat
+│           └── _ALL.60457274.mat
+├── S11
+│   └── MySegmentsMat
+│       └── ground_truth_bb
+│           ├── Directions 1.54138969.mat
+│           ├── Directions 1.55011271.mat
+│           ├── Directions 1.58860488.mat
+│           ├── Directions 1.60457274.mat
+│           ├── Directions.54138969.mat
+│           ├── Directions.55011271.mat
+│           ├── Directions.58860488.mat
+│           ├── Directions.60457274.mat
+│           ├── Discussion 1.54138969.mat
+│           ├── Discussion 1.55011271.mat
+│           ├── Discussion 1.58860488.mat
+│           ├── Discussion 1.60457274.mat
+│           ├── Discussion 2.54138969.mat
+│           ├── Discussion 2.55011271.mat
+│           ├── Discussion 2.58860488.mat
+│           ├── Discussion 2.60457274.mat
+│           ├── Eating 1.54138969.mat
+│           ├── Eating 1.55011271.mat
+│           ├── Eating 1.58860488.mat
+│           ├── Eating 1.60457274.mat
+│           ├── Eating.54138969.mat
+│           ├── Eating.55011271.mat
+│           ├── Eating.58860488.mat
+│           ├── Eating.60457274.mat
+│           ├── Greeting 2.54138969.mat
+│           ├── Greeting 2.55011271.mat
+│           ├── Greeting 2.58860488.mat
+│           ├── Greeting 2.60457274.mat
+│           ├── Greeting.54138969.mat
+│           ├── Greeting.55011271.mat
+│           ├── Greeting.58860488.mat
+│           ├── Greeting.60457274.mat
+│           ├── Phoning 2.54138969.mat
+│           ├── Phoning 2.55011271.mat
+│           ├── Phoning 2.58860488.mat
+│           ├── Phoning 2.60457274.mat
+│           ├── Phoning 3.54138969.mat
+│           ├── Phoning 3.55011271.mat
+│           ├── Phoning 3.58860488.mat
+│           ├── Phoning 3.60457274.mat
+│           ├── Photo 1.54138969.mat
+│           ├── Photo 1.55011271.mat
+│           ├── Photo 1.58860488.mat
+│           ├── Photo 1.60457274.mat
+│           ├── Photo.54138969.mat
+│           ├── Photo.55011271.mat
+│           ├── Photo.58860488.mat
+│           ├── Photo.60457274.mat
+│           ├── Posing 1.54138969.mat
+│           ├── Posing 1.55011271.mat
+│           ├── Posing 1.58860488.mat
+│           ├── Posing 1.60457274.mat
+│           ├── Posing.54138969.mat
+│           ├── Posing.55011271.mat
+│           ├── Posing.58860488.mat
+│           ├── Posing.60457274.mat
+│           ├── Purchases 1.54138969.mat
+│           ├── Purchases 1.55011271.mat
+│           ├── Purchases 1.58860488.mat
+│           ├── Purchases 1.60457274.mat
+│           ├── Purchases.54138969.mat
+│           ├── Purchases.55011271.mat
+│           ├── Purchases.58860488.mat
+│           ├── Purchases.60457274.mat
+│           ├── Sitting 1.54138969.mat
+│           ├── Sitting 1.55011271.mat
+│           ├── Sitting 1.58860488.mat
+│           ├── Sitting 1.60457274.mat
+│           ├── Sitting.54138969.mat
+│           ├── Sitting.55011271.mat
+│           ├── Sitting.58860488.mat
+│           ├── Sitting.60457274.mat
+│           ├── SittingDown 1.54138969.mat
+│           ├── SittingDown 1.55011271.mat
+│           ├── SittingDown 1.58860488.mat
+│           ├── SittingDown 1.60457274.mat
+│           ├── SittingDown.54138969.mat
+│           ├── SittingDown.55011271.mat
+│           ├── SittingDown.58860488.mat
+│           ├── SittingDown.60457274.mat
+│           ├── Smoking 2.54138969.mat
+│           ├── Smoking 2.55011271.mat
+│           ├── Smoking 2.58860488.mat
+│           ├── Smoking 2.60457274.mat
+│           ├── Smoking.54138969.mat
+│           ├── Smoking.55011271.mat
+│           ├── Smoking.58860488.mat
+│           ├── Smoking.60457274.mat
+│           ├── Waiting 1.54138969.mat
+│           ├── Waiting 1.55011271.mat
+│           ├── Waiting 1.58860488.mat
+│           ├── Waiting 1.60457274.mat
+│           ├── Waiting.54138969.mat
+│           ├── Waiting.55011271.mat
+│           ├── Waiting.58860488.mat
+│           ├── Waiting.60457274.mat
+│           ├── WalkDog 1.54138969.mat
+│           ├── WalkDog 1.55011271.mat
+│           ├── WalkDog 1.58860488.mat
+│           ├── WalkDog 1.60457274.mat
+│           ├── WalkDog.54138969.mat
+│           ├── WalkDog.55011271.mat
+│           ├── WalkDog.58860488.mat
+│           ├── WalkDog.60457274.mat
+│           ├── WalkTogether 1.54138969.mat
+│           ├── WalkTogether 1.55011271.mat
+│           ├── WalkTogether 1.58860488.mat
+│           ├── WalkTogether 1.60457274.mat
+│           ├── WalkTogether.54138969.mat
+│           ├── WalkTogether.55011271.mat
+│           ├── WalkTogether.58860488.mat
+│           ├── WalkTogether.60457274.mat
+│           ├── Walking 1.54138969.mat
+│           ├── Walking 1.55011271.mat
+│           ├── Walking 1.58860488.mat
+│           ├── Walking 1.60457274.mat
+│           ├── Walking.54138969.mat
+│           ├── Walking.55011271.mat
+│           ├── Walking.58860488.mat
+│           ├── Walking.60457274.mat
+│           ├── _ALL 1.54138969.mat
+│           ├── _ALL 1.55011271.mat
+│           ├── _ALL 1.58860488.mat
+│           ├── _ALL 1.60457274.mat
+│           ├── _ALL.54138969.mat
+│           ├── _ALL.55011271.mat
+│           ├── _ALL.58860488.mat
+│           └── _ALL.60457274.mat
+├── S2
+│   └── MySegmentsMat
+│       └── ground_truth_bb
+│           ├── Directions 1.54138969.mat
+│           ├── Directions 1.55011271.mat
+│           ├── Directions 1.58860488.mat
+│           ├── Directions 1.60457274.mat
+│           ├── Directions.54138969.mat
+│           ├── Directions.55011271.mat
+│           ├── Directions.58860488.mat
+│           ├── Directions.60457274.mat
+│           ├── Discussion 1.54138969.mat
+│           ├── Discussion 1.55011271.mat
+│           ├── Discussion 1.58860488.mat
+│           ├── Discussion 1.60457274.mat
+│           ├── Discussion.54138969.mat
+│           ├── Discussion.55011271.mat
+│           ├── Discussion.58860488.mat
+│           ├── Discussion.60457274.mat
+│           ├── Eating 1.54138969.mat
+│           ├── Eating 1.55011271.mat
+│           ├── Eating 1.58860488.mat
+│           ├── Eating 1.60457274.mat
+│           ├── Eating 2.54138969.mat
+│           ├── Eating 2.55011271.mat
+│           ├── Eating 2.58860488.mat
+│           ├── Eating 2.60457274.mat
+│           ├── Greeting 1.54138969.mat
+│           ├── Greeting 1.55011271.mat
+│           ├── Greeting 1.58860488.mat
+│           ├── Greeting 1.60457274.mat
+│           ├── Greeting.54138969.mat
+│           ├── Greeting.55011271.mat
+│           ├── Greeting.58860488.mat
+│           ├── Greeting.60457274.mat
+│           ├── Phoning 1.54138969.mat
+│           ├── Phoning 1.55011271.mat
+│           ├── Phoning 1.58860488.mat
+│           ├── Phoning 1.60457274.mat
+│           ├── Phoning.54138969.mat
+│           ├── Phoning.55011271.mat
+│           ├── Phoning.58860488.mat
+│           ├── Phoning.60457274.mat
+│           ├── Photo 1.54138969.mat
+│           ├── Photo 1.55011271.mat
+│           ├── Photo 1.58860488.mat
+│           ├── Photo 1.60457274.mat
+│           ├── Photo.54138969.mat
+│           ├── Photo.55011271.mat
+│           ├── Photo.58860488.mat
+│           ├── Photo.60457274.mat
+│           ├── Posing 1.54138969.mat
+│           ├── Posing 1.55011271.mat
+│           ├── Posing 1.58860488.mat
+│           ├── Posing 1.60457274.mat
+│           ├── Posing.54138969.mat
+│           ├── Posing.55011271.mat
+│           ├── Posing.58860488.mat
+│           ├── Posing.60457274.mat
+│           ├── Purchases 1.54138969.mat
+│           ├── Purchases 1.55011271.mat
+│           ├── Purchases 1.58860488.mat
+│           ├── Purchases 1.60457274.mat
+│           ├── Purchases.54138969.mat
+│           ├── Purchases.55011271.mat
+│           ├── Purchases.58860488.mat
+│           ├── Purchases.60457274.mat
+│           ├── Sitting 1.54138969.mat
+│           ├── Sitting 1.55011271.mat
+│           ├── Sitting 1.58860488.mat
+│           ├── Sitting 1.60457274.mat
+│           ├── Sitting.54138969.mat
+│           ├── Sitting.55011271.mat
+│           ├── Sitting.58860488.mat
+│           ├── Sitting.60457274.mat
+│           ├── SittingDown 2.54138969.mat
+│           ├── SittingDown 2.55011271.mat
+│           ├── SittingDown 2.58860488.mat
+│           ├── SittingDown 2.60457274.mat
+│           ├── SittingDown 3.54138969.mat
+│           ├── SittingDown 3.55011271.mat
+│           ├── SittingDown 3.58860488.mat
+│           ├── SittingDown 3.60457274.mat
+│           ├── Smoking 1.54138969.mat
+│           ├── Smoking 1.55011271.mat
+│           ├── Smoking 1.58860488.mat
+│           ├── Smoking 1.60457274.mat
+│           ├── Smoking.54138969.mat
+│           ├── Smoking.55011271.mat
+│           ├── Smoking.58860488.mat
+│           ├── Smoking.60457274.mat
+│           ├── Waiting 1.54138969.mat
+│           ├── Waiting 1.55011271.mat
+│           ├── Waiting 1.58860488.mat
+│           ├── Waiting 1.60457274.mat
+│           ├── Waiting.54138969.mat
+│           ├── Waiting.55011271.mat
+│           ├── Waiting.58860488.mat
+│           ├── Waiting.60457274.mat
+│           ├── WalkDog 1.54138969.mat
+│           ├── WalkDog 1.55011271.mat
+│           ├── WalkDog 1.58860488.mat
+│           ├── WalkDog 1.60457274.mat
+│           ├── WalkDog.54138969.mat
+│           ├── WalkDog.55011271.mat
+│           ├── WalkDog.58860488.mat
+│           ├── WalkDog.60457274.mat
+│           ├── WalkTogether 1.54138969.mat
+│           ├── WalkTogether 1.55011271.mat
+│           ├── WalkTogether 1.58860488.mat
+│           ├── WalkTogether 1.60457274.mat
+│           ├── WalkTogether.54138969.mat
+│           ├── WalkTogether.55011271.mat
+│           ├── WalkTogether.58860488.mat
+│           ├── WalkTogether.60457274.mat
+│           ├── Walking 1.54138969.mat
+│           ├── Walking 1.55011271.mat
+│           ├── Walking 1.58860488.mat
+│           ├── Walking 1.60457274.mat
+│           ├── Walking.54138969.mat
+│           ├── Walking.55011271.mat
+│           ├── Walking.58860488.mat
+│           └── Walking.60457274.mat
+├── S3
+│   └── MySegmentsMat
+│       └── ground_truth_bb
+│           ├── Directions 1.54138969.mat
+│           ├── Directions 1.55011271.mat
+│           ├── Directions 1.58860488.mat
+│           ├── Directions 1.60457274.mat
+│           ├── Directions.54138969.mat
+│           ├── Directions.55011271.mat
+│           ├── Directions.58860488.mat
+│           ├── Directions.60457274.mat
+│           ├── Discussion 1.54138969.mat
+│           ├── Discussion 1.55011271.mat
+│           ├── Discussion 1.58860488.mat
+│           ├── Discussion 1.60457274.mat
+│           ├── Discussion.54138969.mat
+│           ├── Discussion.55011271.mat
+│           ├── Discussion.58860488.mat
+│           ├── Discussion.60457274.mat
+│           ├── Eating 1.54138969.mat
+│           ├── Eating 1.55011271.mat
+│           ├── Eating 1.58860488.mat
+│           ├── Eating 1.60457274.mat
+│           ├── Eating 2.54138969.mat
+│           ├── Eating 2.55011271.mat
+│           ├── Eating 2.58860488.mat
+│           ├── Eating 2.60457274.mat
+│           ├── Greeting 1.54138969.mat
+│           ├── Greeting 1.55011271.mat
+│           ├── Greeting 1.58860488.mat
+│           ├── Greeting 1.60457274.mat
+│           ├── Greeting.54138969.mat
+│           ├── Greeting.55011271.mat
+│           ├── Greeting.58860488.mat
+│           ├── Greeting.60457274.mat
+│           ├── Phoning 1.54138969.mat
+│           ├── Phoning 1.55011271.mat
+│           ├── Phoning 1.58860488.mat
+│           ├── Phoning 1.60457274.mat
+│           ├── Phoning.54138969.mat
+│           ├── Phoning.55011271.mat
+│           ├── Phoning.58860488.mat
+│           ├── Phoning.60457274.mat
+│           ├── Photo 1.54138969.mat
+│           ├── Photo 1.55011271.mat
+│           ├── Photo 1.58860488.mat
+│           ├── Photo 1.60457274.mat
+│           ├── Photo.54138969.mat
+│           ├── Photo.55011271.mat
+│           ├── Photo.58860488.mat
+│           ├── Photo.60457274.mat
+│           ├── Posing 1.54138969.mat
+│           ├── Posing 1.55011271.mat
+│           ├── Posing 1.58860488.mat
+│           ├── Posing 1.60457274.mat
+│           ├── Posing 2.54138969.mat
+│           ├── Posing 2.55011271.mat
+│           ├── Posing 2.58860488.mat
+│           ├── Posing 2.60457274.mat
+│           ├── Purchases 1.54138969.mat
+│           ├── Purchases 1.55011271.mat
+│           ├── Purchases 1.58860488.mat
+│           ├── Purchases 1.60457274.mat
+│           ├── Purchases.54138969.mat
+│           ├── Purchases.55011271.mat
+│           ├── Purchases.58860488.mat
+│           ├── Purchases.60457274.mat
+│           ├── Sitting 1.54138969.mat
+│           ├── Sitting 1.55011271.mat
+│           ├── Sitting 1.58860488.mat
+│           ├── Sitting 1.60457274.mat
+│           ├── Sitting.54138969.mat
+│           ├── Sitting.55011271.mat
+│           ├── Sitting.58860488.mat
+│           ├── Sitting.60457274.mat
+│           ├── SittingDown 1.54138969.mat
+│           ├── SittingDown 1.55011271.mat
+│           ├── SittingDown 1.58860488.mat
+│           ├── SittingDown 1.60457274.mat
+│           ├── SittingDown.54138969.mat
+│           ├── SittingDown.55011271.mat
+│           ├── SittingDown.58860488.mat
+│           ├── SittingDown.60457274.mat
+│           ├── Smoking 1.54138969.mat
+│           ├── Smoking 1.55011271.mat
+│           ├── Smoking 1.58860488.mat
+│           ├── Smoking 1.60457274.mat
+│           ├── Smoking.54138969.mat
+│           ├── Smoking.55011271.mat
+│           ├── Smoking.58860488.mat
+│           ├── Smoking.60457274.mat
+│           ├── Waiting 1.54138969.mat
+│           ├── Waiting 1.55011271.mat
+│           ├── Waiting 1.58860488.mat
+│           ├── Waiting 1.60457274.mat
+│           ├── Waiting.54138969.mat
+│           ├── Waiting.55011271.mat
+│           ├── Waiting.58860488.mat
+│           ├── Waiting.60457274.mat
+│           ├── WalkDog 1.54138969.mat
+│           ├── WalkDog 1.55011271.mat
+│           ├── WalkDog 1.58860488.mat
+│           ├── WalkDog 1.60457274.mat
+│           ├── WalkDog.54138969.mat
+│           ├── WalkDog.55011271.mat
+│           ├── WalkDog.58860488.mat
+│           ├── WalkDog.60457274.mat
+│           ├── WalkTogether 1.54138969.mat
+│           ├── WalkTogether 1.55011271.mat
+│           ├── WalkTogether 1.58860488.mat
+│           ├── WalkTogether 1.60457274.mat
+│           ├── WalkTogether.54138969.mat
+│           ├── WalkTogether.55011271.mat
+│           ├── WalkTogether.58860488.mat
+│           ├── WalkTogether.60457274.mat
+│           ├── Walking 1.54138969.mat
+│           ├── Walking 1.55011271.mat
+│           ├── Walking 1.58860488.mat
+│           ├── Walking 1.60457274.mat
+│           ├── Walking 2.54138969.mat
+│           ├── Walking 2.55011271.mat
+│           ├── Walking 2.58860488.mat
+│           └── Walking 2.60457274.mat
+├── S4
+│   └── MySegmentsMat
+│       └── ground_truth_bb
+│           ├── Directions 1.54138969.mat
+│           ├── Directions 1.55011271.mat
+│           ├── Directions 1.58860488.mat
+│           ├── Directions 1.60457274.mat
+│           ├── Directions.54138969.mat
+│           ├── Directions.55011271.mat
+│           ├── Directions.58860488.mat
+│           ├── Directions.60457274.mat
+│           ├── Discussion 1.54138969.mat
+│           ├── Discussion 1.55011271.mat
+│           ├── Discussion 1.58860488.mat
+│           ├── Discussion 1.60457274.mat
+│           ├── Discussion.54138969.mat
+│           ├── Discussion.55011271.mat
+│           ├── Discussion.58860488.mat
+│           ├── Discussion.60457274.mat
+│           ├── Eating 1.54138969.mat
+│           ├── Eating 1.55011271.mat
+│           ├── Eating 1.58860488.mat
+│           ├── Eating 1.60457274.mat
+│           ├── Eating.54138969.mat
+│           ├── Eating.55011271.mat
+│           ├── Eating.58860488.mat
+│           ├── Eating.60457274.mat
+│           ├── Greeting 1.54138969.mat
+│           ├── Greeting 1.55011271.mat
+│           ├── Greeting 1.58860488.mat
+│           ├── Greeting 1.60457274.mat
+│           ├── Greeting.54138969.mat
+│           ├── Greeting.55011271.mat
+│           ├── Greeting.58860488.mat
+│           ├── Greeting.60457274.mat
+│           ├── Phoning 1.54138969.mat
+│           ├── Phoning 1.55011271.mat
+│           ├── Phoning 1.58860488.mat
+│           ├── Phoning 1.60457274.mat
+│           ├── Phoning.54138969.mat
+│           ├── Phoning.55011271.mat
+│           ├── Phoning.58860488.mat
+│           ├── Phoning.60457274.mat
+│           ├── Photo 1.54138969.mat
+│           ├── Photo 1.55011271.mat
+│           ├── Photo 1.58860488.mat
+│           ├── Photo 1.60457274.mat
+│           ├── Photo.54138969.mat
+│           ├── Photo.55011271.mat
+│           ├── Photo.58860488.mat
+│           ├── Photo.60457274.mat
+│           ├── Posing 1.54138969.mat
+│           ├── Posing 1.55011271.mat
+│           ├── Posing 1.58860488.mat
+│           ├── Posing 1.60457274.mat
+│           ├── Posing.54138969.mat
+│           ├── Posing.55011271.mat
+│           ├── Posing.58860488.mat
+│           ├── Posing.60457274.mat
+│           ├── Purchases 1.54138969.mat
+│           ├── Purchases 1.55011271.mat
+│           ├── Purchases 1.58860488.mat
+│           ├── Purchases 1.60457274.mat
+│           ├── Purchases.54138969.mat
+│           ├── Purchases.55011271.mat
+│           ├── Purchases.58860488.mat
+│           ├── Purchases.60457274.mat
+│           ├── Sitting 1.54138969.mat
+│           ├── Sitting 1.55011271.mat
+│           ├── Sitting 1.58860488.mat
+│           ├── Sitting 1.60457274.mat
+│           ├── Sitting.54138969.mat
+│           ├── Sitting.55011271.mat
+│           ├── Sitting.58860488.mat
+│           ├── Sitting.60457274.mat
+│           ├── SittingDown 1.54138969.mat
+│           ├── SittingDown 1.55011271.mat
+│           ├── SittingDown 1.58860488.mat
+│           ├── SittingDown 1.60457274.mat
+│           ├── SittingDown 2.54138969.mat
+│           ├── SittingDown 2.55011271.mat
+│           ├── SittingDown 2.58860488.mat
+│           ├── SittingDown 2.60457274.mat
+│           ├── Smoking 1.54138969.mat
+│           ├── Smoking 1.55011271.mat
+│           ├── Smoking 1.58860488.mat
+│           ├── Smoking 1.60457274.mat
+│           ├── Smoking.54138969.mat
+│           ├── Smoking.55011271.mat
+│           ├── Smoking.58860488.mat
+│           ├── Smoking.60457274.mat
+│           ├── Waiting 1.54138969.mat
+│           ├── Waiting 1.55011271.mat
+│           ├── Waiting 1.58860488.mat
+│           ├── Waiting 1.60457274.mat
+│           ├── Waiting.54138969.mat
+│           ├── Waiting.55011271.mat
+│           ├── Waiting.58860488.mat
+│           ├── Waiting.60457274.mat
+│           ├── WalkDog 1.54138969.mat
+│           ├── WalkDog 1.55011271.mat
+│           ├── WalkDog 1.58860488.mat
+│           ├── WalkDog 1.60457274.mat
+│           ├── WalkDog.54138969.mat
+│           ├── WalkDog.55011271.mat
+│           ├── WalkDog.58860488.mat
+│           ├── WalkDog.60457274.mat
+│           ├── WalkTogether 2.54138969.mat
+│           ├── WalkTogether 2.55011271.mat
+│           ├── WalkTogether 2.58860488.mat
+│           ├── WalkTogether 2.60457274.mat
+│           ├── WalkTogether 3.54138969.mat
+│           ├── WalkTogether 3.55011271.mat
+│           ├── WalkTogether 3.58860488.mat
+│           ├── WalkTogether 3.60457274.mat
+│           ├── Walking 1.54138969.mat
+│           ├── Walking 1.55011271.mat
+│           ├── Walking 1.58860488.mat
+│           ├── Walking 1.60457274.mat
+│           ├── Walking.54138969.mat
+│           ├── Walking.55011271.mat
+│           ├── Walking.58860488.mat
+│           └── Walking.60457274.mat
+├── S5
+│   └── MySegmentsMat
+│       └── ground_truth_bb
+│           ├── Directions 1.54138969.mat
+│           ├── Directions 1.55011271.mat
+│           ├── Directions 1.58860488.mat
+│           ├── Directions 1.60457274.mat
+│           ├── Directions 2.54138969.mat
+│           ├── Directions 2.55011271.mat
+│           ├── Directions 2.58860488.mat
+│           ├── Directions 2.60457274.mat
+│           ├── Discussion 2.54138969.mat
+│           ├── Discussion 2.55011271.mat
+│           ├── Discussion 2.58860488.mat
+│           ├── Discussion 2.60457274.mat
+│           ├── Discussion 3.54138969.mat
+│           ├── Discussion 3.55011271.mat
+│           ├── Discussion 3.58860488.mat
+│           ├── Discussion 3.60457274.mat
+│           ├── Eating 1.54138969.mat
+│           ├── Eating 1.55011271.mat
+│           ├── Eating 1.58860488.mat
+│           ├── Eating 1.60457274.mat
+│           ├── Eating.54138969.mat
+│           ├── Eating.55011271.mat
+│           ├── Eating.58860488.mat
+│           ├── Eating.60457274.mat
+│           ├── Greeting 1.54138969.mat
+│           ├── Greeting 1.55011271.mat
+│           ├── Greeting 1.58860488.mat
+│           ├── Greeting 1.60457274.mat
+│           ├── Greeting 2.54138969.mat
+│           ├── Greeting 2.55011271.mat
+│           ├── Greeting 2.58860488.mat
+│           ├── Greeting 2.60457274.mat
+│           ├── Phoning 1.54138969.mat
+│           ├── Phoning 1.55011271.mat
+│           ├── Phoning 1.58860488.mat
+│           ├── Phoning 1.60457274.mat
+│           ├── Phoning.54138969.mat
+│           ├── Phoning.55011271.mat
+│           ├── Phoning.58860488.mat
+│           ├── Phoning.60457274.mat
+│           ├── Photo 2.54138969.mat
+│           ├── Photo 2.55011271.mat
+│           ├── Photo 2.58860488.mat
+│           ├── Photo 2.60457274.mat
+│           ├── Photo.54138969.mat
+│           ├── Photo.55011271.mat
+│           ├── Photo.58860488.mat
+│           ├── Photo.60457274.mat
+│           ├── Posing 1.54138969.mat
+│           ├── Posing 1.55011271.mat
+│           ├── Posing 1.58860488.mat
+│           ├── Posing 1.60457274.mat
+│           ├── Posing.54138969.mat
+│           ├── Posing.55011271.mat
+│           ├── Posing.58860488.mat
+│           ├── Posing.60457274.mat
+│           ├── Purchases 1.54138969.mat
+│           ├── Purchases 1.55011271.mat
+│           ├── Purchases 1.58860488.mat
+│           ├── Purchases 1.60457274.mat
+│           ├── Purchases.54138969.mat
+│           ├── Purchases.55011271.mat
+│           ├── Purchases.58860488.mat
+│           ├── Purchases.60457274.mat
+│           ├── Sitting 1.54138969.mat
+│           ├── Sitting 1.55011271.mat
+│           ├── Sitting 1.58860488.mat
+│           ├── Sitting 1.60457274.mat
+│           ├── Sitting.54138969.mat
+│           ├── Sitting.55011271.mat
+│           ├── Sitting.58860488.mat
+│           ├── Sitting.60457274.mat
+│           ├── SittingDown 1.54138969.mat
+│           ├── SittingDown 1.55011271.mat
+│           ├── SittingDown 1.58860488.mat
+│           ├── SittingDown 1.60457274.mat
+│           ├── SittingDown.54138969.mat
+│           ├── SittingDown.55011271.mat
+│           ├── SittingDown.58860488.mat
+│           ├── SittingDown.60457274.mat
+│           ├── Smoking 1.54138969.mat
+│           ├── Smoking 1.55011271.mat
+│           ├── Smoking 1.58860488.mat
+│           ├── Smoking 1.60457274.mat
+│           ├── Smoking.54138969.mat
+│           ├── Smoking.55011271.mat
+│           ├── Smoking.58860488.mat
+│           ├── Smoking.60457274.mat
+│           ├── Waiting 1.54138969.mat
+│           ├── Waiting 1.55011271.mat
+│           ├── Waiting 1.58860488.mat
+│           ├── Waiting 1.60457274.mat
+│           ├── Waiting 2.54138969.mat
+│           ├── Waiting 2.55011271.mat
+│           ├── Waiting 2.58860488.mat
+│           ├── Waiting 2.60457274.mat
+│           ├── WalkDog 1.54138969.mat
+│           ├── WalkDog 1.55011271.mat
+│           ├── WalkDog 1.58860488.mat
+│           ├── WalkDog 1.60457274.mat
+│           ├── WalkDog.54138969.mat
+│           ├── WalkDog.55011271.mat
+│           ├── WalkDog.58860488.mat
+│           ├── WalkDog.60457274.mat
+│           ├── WalkTogether 1.54138969.mat
+│           ├── WalkTogether 1.55011271.mat
+│           ├── WalkTogether 1.58860488.mat
+│           ├── WalkTogether 1.60457274.mat
+│           ├── WalkTogether.54138969.mat
+│           ├── WalkTogether.55011271.mat
+│           ├── WalkTogether.58860488.mat
+│           ├── WalkTogether.60457274.mat
+│           ├── Walking 1.54138969.mat
+│           ├── Walking 1.55011271.mat
+│           ├── Walking 1.58860488.mat
+│           ├── Walking 1.60457274.mat
+│           ├── Walking.54138969.mat
+│           ├── Walking.55011271.mat
+│           ├── Walking.58860488.mat
+│           ├── Walking.60457274.mat
+│           ├── _ALL 1.54138969.mat
+│           ├── _ALL 1.55011271.mat
+│           ├── _ALL 1.58860488.mat
+│           ├── _ALL 1.60457274.mat
+│           ├── _ALL.54138969.mat
+│           ├── _ALL.55011271.mat
+│           ├── _ALL.58860488.mat
+│           └── _ALL.60457274.mat
+├── S6
+│   └── MySegmentsMat
+│       └── ground_truth_bb
+│           ├── Directions 1.54138969.mat
+│           ├── Directions 1.55011271.mat
+│           ├── Directions 1.58860488.mat
+│           ├── Directions 1.60457274.mat
+│           ├── Directions.54138969.mat
+│           ├── Directions.55011271.mat
+│           ├── Directions.58860488.mat
+│           ├── Directions.60457274.mat
+│           ├── Discussion 1.54138969.mat
+│           ├── Discussion 1.55011271.mat
+│           ├── Discussion 1.58860488.mat
+│           ├── Discussion 1.60457274.mat
+│           ├── Discussion.54138969.mat
+│           ├── Discussion.55011271.mat
+│           ├── Discussion.58860488.mat
+│           ├── Discussion.60457274.mat
+│           ├── Eating 1.54138969.mat
+│           ├── Eating 1.55011271.mat
+│           ├── Eating 1.58860488.mat
+│           ├── Eating 1.60457274.mat
+│           ├── Eating 2.54138969.mat
+│           ├── Eating 2.55011271.mat
+│           ├── Eating 2.58860488.mat
+│           ├── Eating 2.60457274.mat
+│           ├── Greeting 1.54138969.mat
+│           ├── Greeting 1.55011271.mat
+│           ├── Greeting 1.58860488.mat
+│           ├── Greeting 1.60457274.mat
+│           ├── Greeting.54138969.mat
+│           ├── Greeting.55011271.mat
+│           ├── Greeting.58860488.mat
+│           ├── Greeting.60457274.mat
+│           ├── Phoning 1.54138969.mat
+│           ├── Phoning 1.55011271.mat
+│           ├── Phoning 1.58860488.mat
+│           ├── Phoning 1.60457274.mat
+│           ├── Phoning.54138969.mat
+│           ├── Phoning.55011271.mat
+│           ├── Phoning.58860488.mat
+│           ├── Phoning.60457274.mat
+│           ├── Photo 1.54138969.mat
+│           ├── Photo 1.55011271.mat
+│           ├── Photo 1.58860488.mat
+│           ├── Photo 1.60457274.mat
+│           ├── Photo.54138969.mat
+│           ├── Photo.55011271.mat
+│           ├── Photo.58860488.mat
+│           ├── Photo.60457274.mat
+│           ├── Posing 2.54138969.mat
+│           ├── Posing 2.55011271.mat
+│           ├── Posing 2.58860488.mat
+│           ├── Posing 2.60457274.mat
+│           ├── Posing.54138969.mat
+│           ├── Posing.55011271.mat
+│           ├── Posing.58860488.mat
+│           ├── Posing.60457274.mat
+│           ├── Purchases 1.54138969.mat
+│           ├── Purchases 1.55011271.mat
+│           ├── Purchases 1.58860488.mat
+│           ├── Purchases 1.60457274.mat
+│           ├── Purchases.54138969.mat
+│           ├── Purchases.55011271.mat
+│           ├── Purchases.58860488.mat
+│           ├── Purchases.60457274.mat
+│           ├── Sitting 1.54138969.mat
+│           ├── Sitting 1.55011271.mat
+│           ├── Sitting 1.58860488.mat
+│           ├── Sitting 1.60457274.mat
+│           ├── Sitting 2.54138969.mat
+│           ├── Sitting 2.55011271.mat
+│           ├── Sitting 2.58860488.mat
+│           ├── Sitting 2.60457274.mat
+│           ├── SittingDown 1.54138969.mat
+│           ├── SittingDown 1.55011271.mat
+│           ├── SittingDown 1.58860488.mat
+│           ├── SittingDown 1.60457274.mat
+│           ├── SittingDown.54138969.mat
+│           ├── SittingDown.55011271.mat
+│           ├── SittingDown.58860488.mat
+│           ├── SittingDown.60457274.mat
+│           ├── Smoking 1.54138969.mat
+│           ├── Smoking 1.55011271.mat
+│           ├── Smoking 1.58860488.mat
+│           ├── Smoking 1.60457274.mat
+│           ├── Smoking.54138969.mat
+│           ├── Smoking.55011271.mat
+│           ├── Smoking.58860488.mat
+│           ├── Smoking.60457274.mat
+│           ├── Waiting 3.54138969.mat
+│           ├── Waiting 3.55011271.mat
+│           ├── Waiting 3.58860488.mat
+│           ├── Waiting 3.60457274.mat
+│           ├── Waiting.54138969.mat
+│           ├── Waiting.55011271.mat
+│           ├── Waiting.58860488.mat
+│           ├── Waiting.60457274.mat
+│           ├── WalkDog 1.54138969.mat
+│           ├── WalkDog 1.55011271.mat
+│           ├── WalkDog 1.58860488.mat
+│           ├── WalkDog 1.60457274.mat
+│           ├── WalkDog.54138969.mat
+│           ├── WalkDog.55011271.mat
+│           ├── WalkDog.58860488.mat
+│           ├── WalkDog.60457274.mat
+│           ├── WalkTogether 1.54138969.mat
+│           ├── WalkTogether 1.55011271.mat
+│           ├── WalkTogether 1.58860488.mat
+│           ├── WalkTogether 1.60457274.mat
+│           ├── WalkTogether.54138969.mat
+│           ├── WalkTogether.55011271.mat
+│           ├── WalkTogether.58860488.mat
+│           ├── WalkTogether.60457274.mat
+│           ├── Walking 1.54138969.mat
+│           ├── Walking 1.55011271.mat
+│           ├── Walking 1.58860488.mat
+│           ├── Walking 1.60457274.mat
+│           ├── Walking.54138969.mat
+│           ├── Walking.55011271.mat
+│           ├── Walking.58860488.mat
+│           ├── Walking.60457274.mat
+│           ├── _ALL 1.54138969.mat
+│           ├── _ALL 1.55011271.mat
+│           ├── _ALL 1.58860488.mat
+│           ├── _ALL 1.60457274.mat
+│           ├── _ALL.54138969.mat
+│           ├── _ALL.55011271.mat
+│           ├── _ALL.58860488.mat
+│           └── _ALL.60457274.mat
+├── S7
+│   └── MySegmentsMat
+│       └── ground_truth_bb
+│           ├── Directions 1.54138969.mat
+│           ├── Directions 1.55011271.mat
+│           ├── Directions 1.58860488.mat
+│           ├── Directions 1.60457274.mat
+│           ├── Directions.54138969.mat
+│           ├── Directions.55011271.mat
+│           ├── Directions.58860488.mat
+│           ├── Directions.60457274.mat
+│           ├── Discussion 1.54138969.mat
+│           ├── Discussion 1.55011271.mat
+│           ├── Discussion 1.58860488.mat
+│           ├── Discussion 1.60457274.mat
+│           ├── Discussion.54138969.mat
+│           ├── Discussion.55011271.mat
+│           ├── Discussion.58860488.mat
+│           ├── Discussion.60457274.mat
+│           ├── Eating 1.54138969.mat
+│           ├── Eating 1.55011271.mat
+│           ├── Eating 1.58860488.mat
+│           ├── Eating 1.60457274.mat
+│           ├── Eating.54138969.mat
+│           ├── Eating.55011271.mat
+│           ├── Eating.58860488.mat
+│           ├── Eating.60457274.mat
+│           ├── Greeting 1.54138969.mat
+│           ├── Greeting 1.55011271.mat
+│           ├── Greeting 1.58860488.mat
+│           ├── Greeting 1.60457274.mat
+│           ├── Greeting.54138969.mat
+│           ├── Greeting.55011271.mat
+│           ├── Greeting.58860488.mat
+│           ├── Greeting.60457274.mat
+│           ├── Phoning 2.54138969.mat
+│           ├── Phoning 2.55011271.mat
+│           ├── Phoning 2.58860488.mat
+│           ├── Phoning 2.60457274.mat
+│           ├── Phoning.54138969.mat
+│           ├── Phoning.55011271.mat
+│           ├── Phoning.58860488.mat
+│           ├── Phoning.60457274.mat
+│           ├── Photo 1.54138969.mat
+│           ├── Photo 1.55011271.mat
+│           ├── Photo 1.58860488.mat
+│           ├── Photo 1.60457274.mat
+│           ├── Photo.54138969.mat
+│           ├── Photo.55011271.mat
+│           ├── Photo.58860488.mat
+│           ├── Photo.60457274.mat
+│           ├── Posing 1.54138969.mat
+│           ├── Posing 1.55011271.mat
+│           ├── Posing 1.58860488.mat
+│           ├── Posing 1.60457274.mat
+│           ├── Posing.54138969.mat
+│           ├── Posing.55011271.mat
+│           ├── Posing.58860488.mat
+│           ├── Posing.60457274.mat
+│           ├── Purchases 1.54138969.mat
+│           ├── Purchases 1.55011271.mat
+│           ├── Purchases 1.58860488.mat
+│           ├── Purchases 1.60457274.mat
+│           ├── Purchases.54138969.mat
+│           ├── Purchases.55011271.mat
+│           ├── Purchases.58860488.mat
+│           ├── Purchases.60457274.mat
+│           ├── Sitting 1.54138969.mat
+│           ├── Sitting 1.55011271.mat
+│           ├── Sitting 1.58860488.mat
+│           ├── Sitting 1.60457274.mat
+│           ├── Sitting.54138969.mat
+│           ├── Sitting.55011271.mat
+│           ├── Sitting.58860488.mat
+│           ├── Sitting.60457274.mat
+│           ├── SittingDown 1.54138969.mat
+│           ├── SittingDown 1.55011271.mat
+│           ├── SittingDown 1.58860488.mat
+│           ├── SittingDown 1.60457274.mat
+│           ├── SittingDown.54138969.mat
+│           ├── SittingDown.55011271.mat
+│           ├── SittingDown.58860488.mat
+│           ├── SittingDown.60457274.mat
+│           ├── Smoking 1.54138969.mat
+│           ├── Smoking 1.55011271.mat
+│           ├── Smoking 1.58860488.mat
+│           ├── Smoking 1.60457274.mat
+│           ├── Smoking.54138969.mat
+│           ├── Smoking.55011271.mat
+│           ├── Smoking.58860488.mat
+│           ├── Smoking.60457274.mat
+│           ├── Waiting 1.54138969.mat
+│           ├── Waiting 1.55011271.mat
+│           ├── Waiting 1.58860488.mat
+│           ├── Waiting 1.60457274.mat
+│           ├── Waiting 2.54138969.mat
+│           ├── Waiting 2.55011271.mat
+│           ├── Waiting 2.58860488.mat
+│           ├── Waiting 2.60457274.mat
+│           ├── WalkDog 1.54138969.mat
+│           ├── WalkDog 1.55011271.mat
+│           ├── WalkDog 1.58860488.mat
+│           ├── WalkDog 1.60457274.mat
+│           ├── WalkDog.54138969.mat
+│           ├── WalkDog.55011271.mat
+│           ├── WalkDog.58860488.mat
+│           ├── WalkDog.60457274.mat
+│           ├── WalkTogether 1.54138969.mat
+│           ├── WalkTogether 1.55011271.mat
+│           ├── WalkTogether 1.58860488.mat
+│           ├── WalkTogether 1.60457274.mat
+│           ├── WalkTogether.54138969.mat
+│           ├── WalkTogether.55011271.mat
+│           ├── WalkTogether.58860488.mat
+│           ├── WalkTogether.60457274.mat
+│           ├── Walking 1.54138969.mat
+│           ├── Walking 1.55011271.mat
+│           ├── Walking 1.58860488.mat
+│           ├── Walking 1.60457274.mat
+│           ├── Walking 2.54138969.mat
+│           ├── Walking 2.55011271.mat
+│           ├── Walking 2.58860488.mat
+│           ├── Walking 2.60457274.mat
+│           ├── _ALL 1.54138969.mat
+│           ├── _ALL 1.55011271.mat
+│           ├── _ALL 1.58860488.mat
+│           ├── _ALL 1.60457274.mat
+│           ├── _ALL.54138969.mat
+│           ├── _ALL.55011271.mat
+│           ├── _ALL.58860488.mat
+│           └── _ALL.60457274.mat
+├── S8
+│   └── MySegmentsMat
+│       └── ground_truth_bb
+│           ├── Directions 1.54138969.mat
+│           ├── Directions 1.55011271.mat
+│           ├── Directions 1.58860488.mat
+│           ├── Directions 1.60457274.mat
+│           ├── Directions.54138969.mat
+│           ├── Directions.55011271.mat
+│           ├── Directions.58860488.mat
+│           ├── Directions.60457274.mat
+│           ├── Discussion 1.54138969.mat
+│           ├── Discussion 1.55011271.mat
+│           ├── Discussion 1.58860488.mat
+│           ├── Discussion 1.60457274.mat
+│           ├── Discussion.54138969.mat
+│           ├── Discussion.55011271.mat
+│           ├── Discussion.58860488.mat
+│           ├── Discussion.60457274.mat
+│           ├── Eating 1.54138969.mat
+│           ├── Eating 1.55011271.mat
+│           ├── Eating 1.58860488.mat
+│           ├── Eating 1.60457274.mat
+│           ├── Eating.54138969.mat
+│           ├── Eating.55011271.mat
+│           ├── Eating.58860488.mat
+│           ├── Eating.60457274.mat
+│           ├── Greeting 1.54138969.mat
+│           ├── Greeting 1.55011271.mat
+│           ├── Greeting 1.58860488.mat
+│           ├── Greeting 1.60457274.mat
+│           ├── Greeting.54138969.mat
+│           ├── Greeting.55011271.mat
+│           ├── Greeting.58860488.mat
+│           ├── Greeting.60457274.mat
+│           ├── Phoning 1.54138969.mat
+│           ├── Phoning 1.55011271.mat
+│           ├── Phoning 1.58860488.mat
+│           ├── Phoning 1.60457274.mat
+│           ├── Phoning.54138969.mat
+│           ├── Phoning.55011271.mat
+│           ├── Phoning.58860488.mat
+│           ├── Phoning.60457274.mat
+│           ├── Photo 1.54138969.mat
+│           ├── Photo 1.55011271.mat
+│           ├── Photo 1.58860488.mat
+│           ├── Photo 1.60457274.mat
+│           ├── Photo.54138969.mat
+│           ├── Photo.55011271.mat
+│           ├── Photo.58860488.mat
+│           ├── Photo.60457274.mat
+│           ├── Posing 1.54138969.mat
+│           ├── Posing 1.55011271.mat
+│           ├── Posing 1.58860488.mat
+│           ├── Posing 1.60457274.mat
+│           ├── Posing.54138969.mat
+│           ├── Posing.55011271.mat
+│           ├── Posing.58860488.mat
+│           ├── Posing.60457274.mat
+│           ├── Purchases 1.54138969.mat
+│           ├── Purchases 1.55011271.mat
+│           ├── Purchases 1.58860488.mat
+│           ├── Purchases 1.60457274.mat
+│           ├── Purchases.54138969.mat
+│           ├── Purchases.55011271.mat
+│           ├── Purchases.58860488.mat
+│           ├── Purchases.60457274.mat
+│           ├── Sitting 1.54138969.mat
+│           ├── Sitting 1.55011271.mat
+│           ├── Sitting 1.58860488.mat
+│           ├── Sitting 1.60457274.mat
+│           ├── Sitting.54138969.mat
+│           ├── Sitting.55011271.mat
+│           ├── Sitting.58860488.mat
+│           ├── Sitting.60457274.mat
+│           ├── SittingDown 1.54138969.mat
+│           ├── SittingDown 1.55011271.mat
+│           ├── SittingDown 1.58860488.mat
+│           ├── SittingDown 1.60457274.mat
+│           ├── SittingDown.54138969.mat
+│           ├── SittingDown.55011271.mat
+│           ├── SittingDown.58860488.mat
+│           ├── SittingDown.60457274.mat
+│           ├── Smoking 1.54138969.mat
+│           ├── Smoking 1.55011271.mat
+│           ├── Smoking 1.58860488.mat
+│           ├── Smoking 1.60457274.mat
+│           ├── Smoking.54138969.mat
+│           ├── Smoking.55011271.mat
+│           ├── Smoking.58860488.mat
+│           ├── Smoking.60457274.mat
+│           ├── Waiting 1.54138969.mat
+│           ├── Waiting 1.55011271.mat
+│           ├── Waiting 1.58860488.mat
+│           ├── Waiting 1.60457274.mat
+│           ├── Waiting.54138969.mat
+│           ├── Waiting.55011271.mat
+│           ├── Waiting.58860488.mat
+│           ├── Waiting.60457274.mat
+│           ├── WalkDog 1.54138969.mat
+│           ├── WalkDog 1.55011271.mat
+│           ├── WalkDog 1.58860488.mat
+│           ├── WalkDog 1.60457274.mat
+│           ├── WalkDog.54138969.mat
+│           ├── WalkDog.55011271.mat
+│           ├── WalkDog.58860488.mat
+│           ├── WalkDog.60457274.mat
+│           ├── WalkTogether 1.54138969.mat
+│           ├── WalkTogether 1.55011271.mat
+│           ├── WalkTogether 1.58860488.mat
+│           ├── WalkTogether 1.60457274.mat
+│           ├── WalkTogether 2.54138969.mat
+│           ├── WalkTogether 2.55011271.mat
+│           ├── WalkTogether 2.58860488.mat
+│           ├── WalkTogether 2.60457274.mat
+│           ├── Walking 1.54138969.mat
+│           ├── Walking 1.55011271.mat
+│           ├── Walking 1.58860488.mat
+│           ├── Walking 1.60457274.mat
+│           ├── Walking.54138969.mat
+│           ├── Walking.55011271.mat
+│           ├── Walking.58860488.mat
+│           ├── Walking.60457274.mat
+│           ├── _ALL 1.54138969.mat
+│           ├── _ALL 1.55011271.mat
+│           ├── _ALL 1.58860488.mat
+│           ├── _ALL 1.60457274.mat
+│           ├── _ALL.54138969.mat
+│           ├── _ALL.55011271.mat
+│           ├── _ALL.58860488.mat
+│           └── _ALL.60457274.mat
+└── S9
+    └── MySegmentsMat
+        └── ground_truth_bb
+            ├── Directions 1.54138969.mat
+            ├── Directions 1.55011271.mat
+            ├── Directions 1.58860488.mat
+            ├── Directions 1.60457274.mat
+            ├── Directions.54138969.mat
+            ├── Directions.55011271.mat
+            ├── Directions.58860488.mat
+            ├── Directions.60457274.mat
+            ├── Discussion 1.54138969.mat
+            ├── Discussion 1.55011271.mat
+            ├── Discussion 1.58860488.mat
+            ├── Discussion 1.60457274.mat
+            ├── Discussion 2.54138969.mat
+            ├── Discussion 2.55011271.mat
+            ├── Discussion 2.58860488.mat
+            ├── Discussion 2.60457274.mat
+            ├── Eating 1.54138969.mat
+            ├── Eating 1.55011271.mat
+            ├── Eating 1.58860488.mat
+            ├── Eating 1.60457274.mat
+            ├── Eating.54138969.mat
+            ├── Eating.55011271.mat
+            ├── Eating.58860488.mat
+            ├── Eating.60457274.mat
+            ├── Greeting 1.54138969.mat
+            ├── Greeting 1.55011271.mat
+            ├── Greeting 1.58860488.mat
+            ├── Greeting 1.60457274.mat
+            ├── Greeting.54138969.mat
+            ├── Greeting.55011271.mat
+            ├── Greeting.58860488.mat
+            ├── Greeting.60457274.mat
+            ├── Phoning 1.54138969.mat
+            ├── Phoning 1.55011271.mat
+            ├── Phoning 1.58860488.mat
+            ├── Phoning 1.60457274.mat
+            ├── Phoning.54138969.mat
+            ├── Phoning.55011271.mat
+            ├── Phoning.58860488.mat
+            ├── Phoning.60457274.mat
+            ├── Photo 1.54138969.mat
+            ├── Photo 1.55011271.mat
+            ├── Photo 1.58860488.mat
+            ├── Photo 1.60457274.mat
+            ├── Photo.54138969.mat
+            ├── Photo.55011271.mat
+            ├── Photo.58860488.mat
+            ├── Photo.60457274.mat
+            ├── Posing 1.54138969.mat
+            ├── Posing 1.55011271.mat
+            ├── Posing 1.58860488.mat
+            ├── Posing 1.60457274.mat
+            ├── Posing.54138969.mat
+            ├── Posing.55011271.mat
+            ├── Posing.58860488.mat
+            ├── Posing.60457274.mat
+            ├── Purchases 1.54138969.mat
+            ├── Purchases 1.55011271.mat
+            ├── Purchases 1.58860488.mat
+            ├── Purchases 1.60457274.mat
+            ├── Purchases.54138969.mat
+            ├── Purchases.55011271.mat
+            ├── Purchases.58860488.mat
+            ├── Purchases.60457274.mat
+            ├── Sitting 1.54138969.mat
+            ├── Sitting 1.55011271.mat
+            ├── Sitting 1.58860488.mat
+            ├── Sitting 1.60457274.mat
+            ├── Sitting.54138969.mat
+            ├── Sitting.55011271.mat
+            ├── Sitting.58860488.mat
+            ├── Sitting.60457274.mat
+            ├── SittingDown 1.54138969.mat
+            ├── SittingDown 1.55011271.mat
+            ├── SittingDown 1.58860488.mat
+            ├── SittingDown 1.60457274.mat
+            ├── SittingDown.54138969.mat
+            ├── SittingDown.55011271.mat
+            ├── SittingDown.58860488.mat
+            ├── SittingDown.60457274.mat
+            ├── Smoking 1.54138969.mat
+            ├── Smoking 1.55011271.mat
+            ├── Smoking 1.58860488.mat
+            ├── Smoking 1.60457274.mat
+            ├── Smoking.54138969.mat
+            ├── Smoking.55011271.mat
+            ├── Smoking.58860488.mat
+            ├── Smoking.60457274.mat
+            ├── Waiting 1.54138969.mat
+            ├── Waiting 1.55011271.mat
+            ├── Waiting 1.58860488.mat
+            ├── Waiting 1.60457274.mat
+            ├── Waiting.54138969.mat
+            ├── Waiting.55011271.mat
+            ├── Waiting.58860488.mat
+            ├── Waiting.60457274.mat
+            ├── WalkDog 1.54138969.mat
+            ├── WalkDog 1.55011271.mat
+            ├── WalkDog 1.58860488.mat
+            ├── WalkDog 1.60457274.mat
+            ├── WalkDog.54138969.mat
+            ├── WalkDog.55011271.mat
+            ├── WalkDog.58860488.mat
+            ├── WalkDog.60457274.mat
+            ├── WalkTogether 1.54138969.mat
+            ├── WalkTogether 1.55011271.mat
+            ├── WalkTogether 1.58860488.mat
+            ├── WalkTogether 1.60457274.mat
+            ├── WalkTogether.54138969.mat
+            ├── WalkTogether.55011271.mat
+            ├── WalkTogether.58860488.mat
+            ├── WalkTogether.60457274.mat
+            ├── Walking 1.54138969.mat
+            ├── Walking 1.55011271.mat
+            ├── Walking 1.58860488.mat
+            ├── Walking 1.60457274.mat
+            ├── Walking.54138969.mat
+            ├── Walking.55011271.mat
+            ├── Walking.58860488.mat
+            ├── Walking.60457274.mat
+            ├── _ALL 1.54138969.mat
+            ├── _ALL 1.55011271.mat
+            ├── _ALL 1.58860488.mat
+            ├── _ALL 1.60457274.mat
+            ├── _ALL.54138969.mat
+            ├── _ALL.55011271.mat
+            ├── _ALL.58860488.mat
+            └── _ALL.60457274.mat
+
+30 directories, 1256 files
