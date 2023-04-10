@@ -339,6 +339,12 @@ export abstract class SingleInputStep extends AbstractStep {
             await this.updateOutputCaches();
         }
 
+        // Update all output caches with the success status
+        for (const outputCache of this.outputsCache) {
+            outputCache.state = 'DONE';
+        }
+        await this.updateOutputCaches();
+
         // Assume everything went fine
         return 'Success';
     }
