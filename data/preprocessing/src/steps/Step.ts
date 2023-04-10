@@ -40,19 +40,22 @@ export abstract class AbstractStep {
 
     constructor(stepName: string, {
         outputsInfo, 
-        clearOutputDirectories = false
+        clearOutputDirectories = true
     }: {
         outputsInfo: DataInfo[], 
         clearOutputDirectories?: boolean
     }) {
-        if (clearOutputDirectories) {
-            for (const outputInfo of outputsInfo) {
-                spawnSync('rm', ['-rf', outputInfo.directory]);
-            }
-        }
-        
         this.stepName = stepName;
         this.outputsCache = outputsInfo.map(AbstractStep.loadCacheFile);
+
+        // Clear directories if they are not ready
+        if (clearOutputDirectories) {
+            for (const outputCache of this.outputsCache) {
+                if (outputCache.state !== 'DONE') {
+                    spawnSync('rm', ['-rf', zx.path.join(outputCache.directory, '*')]);
+                }
+            }
+        }
     }
 
     /**
@@ -250,11 +253,12 @@ export abstract class AbstractStep {
                 fileList: [],
             };
             console.log(`Writing basic cache template for ${cacheFilePath}`);
-            zx.fs.writeJSONSync(cacheFilePath, {
+            const jsonData = {
                 ...cacheData,
                 // Remove functions
                 directoryIsAllowed: undefined
-            }, {spaces: 4, EOL: '\n', encoding: 'utf8'});
+            };
+            zx.fs.writeFileSync(cacheFilePath, JSON.stringify(jsonData, null, 4));
         }
 
         // Create data directory in case it doesn't exist
@@ -420,6 +424,14 @@ export abstract class MultiInputStep<TInputType = string[], TNextInput = unknown
             // Iterate next zipped input
             inputCurrent = inputIterator.next(result.nextGeneratorParameter);
         }
+
+        // Update all output caches with the success status
+        for (const outputCache of this.outputsCache) {
+            outputCache.state = 'DONE';
+        }
+        await this.updateOutputCaches();
+
+        // Return success
         return 'Success';
     }
 
