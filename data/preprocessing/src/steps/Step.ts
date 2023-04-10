@@ -109,10 +109,14 @@ export abstract class AbstractStep {
                     file: fileName,
                     md5: fileMD5.toString()
                 });
-
-                // Add updated cache to disk
-                zx.fs.writeJSONSync(zx.path.join(ROOT_DIR, outputCache.cacheFile), this.outputsCache[index]);
             }
+            
+            // Add updated cache to disk
+            const jsonData = {
+                ...this.outputsCache[index],
+                directoryIsAllowed: undefined
+            };
+            zx.fs.writeFileSync(zx.path.join(ROOT_DIR, outputCache.cacheFile), JSON.stringify(jsonData, null, 4));
         }
     }
 
