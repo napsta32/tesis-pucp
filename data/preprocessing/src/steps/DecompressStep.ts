@@ -17,41 +17,71 @@ export class DecompressStep extends SingleInputStep {
                 directory: '/data/h36m/raw/',
                 cacheFile: './cache/1-compressed-files.json',
                 processingUnit: 'file',
-                allowedFileExtensions: ['.tgz']
+                allowedFileExtensions: ['.tgz'],
             },
             outputsInfo: [
                 {
                     directory: POSES_D2_POSITIONS_DIR,
                     cacheFile: './cache/2a-decompressed-poses-d2-positions.json',
                     processingUnit: 'directory',
-                    directoryIsAllowed: async () => true
+                    directoryIsAllowed: async () => true,
+                    samples: [
+                        'S1/MyPoseFeatures/D2_Positions/Directions 1.54138969.cdf',
+                        'S1/MyPoseFeatures/D2_Positions/Directions 1.55011271.cdf',
+                        'S1/MyPoseFeatures/D2_Positions/Directions 1.58860488.cdf',
+                        'S1/MyPoseFeatures/D2_Positions/Directions 1.60457274.cdf'
+                    ]
                 },
                 {
                     directory: POSES_D3_POSITIONS_MONO_UNIVERSAL_DIR,
                     cacheFile: './cache/2b-decompressed-poses-d3-positions-mono-universal.json',
                     processingUnit: 'directory',
-                    directoryIsAllowed: async () => true
+                    directoryIsAllowed: async () => true,
+                    samples: [
+                        'S1/MyPoseFeatures/D3_Positions_mono_universal/Directions 1.54138969.cdf',
+                        'S1/MyPoseFeatures/D3_Positions_mono_universal/Directions 1.55011271.cdf',
+                        'S1/MyPoseFeatures/D3_Positions_mono_universal/Directions 1.58860488.cdf',
+                        'S1/MyPoseFeatures/D3_Positions_mono_universal/Directions 1.60457274.cdf',
+                    ],
                 },
                 {
                     directory: POSES_D3_POSITIONS_MONO_DIR,
                     cacheFile: './cache/2c-decompressed-poses-d3-positions-mono.json',
                     processingUnit: 'directory',
-                    directoryIsAllowed: async () => true
+                    directoryIsAllowed: async () => true,
+                    samples: [
+                        'S1/MyPoseFeatures/D3_Positions_mono/Directions 1.54138969.cdf',
+                        'S1/MyPoseFeatures/D3_Positions_mono/Directions 1.55011271.cdf',
+                        'S1/MyPoseFeatures/D3_Positions_mono/Directions 1.58860488.cdf',
+                        'S1/MyPoseFeatures/D3_Positions_mono/Directions 1.60457274.cdf'
+                    ]
                 },
                 {
                     directory: SEGMENTS_MAT_GT_BB,
                     cacheFile: './cache/2d-decompressed-segments-mat-gt-bb.json',
                     processingUnit: 'directory',
-                    directoryIsAllowed: async () => true
+                    directoryIsAllowed: async () => true,
+                    samples: [
+                        'S1/MySegmentsMat/ground_truth_bb/Directions 1.54138969.cdf',
+                        'S1/MySegmentsMat/ground_truth_bb/Directions 1.55011271.cdf',
+                        'S1/MySegmentsMat/ground_truth_bb/Directions 1.58860488.cdf',
+                        'S1/MySegmentsMat/ground_truth_bb/Directions 1.60457274.cdf'
+                    ]
                 },
                 {
                     directory: VIDEOS,
                     cacheFile: './cache/2e-decompressed-videos.json',
                     processingUnit: 'directory',
-                    directoryIsAllowed: async () => true
+                    directoryIsAllowed: async () => true,
+                    'samples': [
+                        'S1/Videos/Directions 1.54138969.cdf',
+                        'S1/Videos/Directions 1.55011271.cdf',
+                        'S1/Videos/Directions 1.58860488.cdf',
+                        'S1/Videos/Directions 1.60457274.cdf'
+                    ]
                 },
             ],
-            clearOutputDirectories: true
+            clearOutputDirectories: true,
         });
     }
 

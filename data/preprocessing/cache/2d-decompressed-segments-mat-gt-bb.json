@@ -1,48 +1,54 @@
 {
-  "processingUnit": "directory",
-  "cacheFile": "./cache/2d-decompressed-segments-mat-gt-bb.json",
-  "state": "DONE",
-  "directory": "/data/h36m/2d-decompressed-segments-mat-gt-bb",
-  "fileList": [
-    {
-      "file": "S1",
-      "md5": "2bac2d09e8395975a212e2a7dd3c0486"
-    },
-    {
-      "file": "S11",
-      "md5": "0e24da1889446aefe0ff950765012f08"
-    },
-    {
-      "file": "S2",
-      "md5": "3e5d6c9bf55089bcdb5386b20545e918"
-    },
-    {
-      "file": "S3",
-      "md5": "0afc4a7e53a886413393ece4ee8f556a"
-    },
-    {
-      "file": "S4",
-      "md5": "975ff4368343b28aff6ad56b525c0ddb"
-    },
-    {
-      "file": "S5",
-      "md5": "6d4bf2003183376e8e5dbc73a092f654"
-    },
-    {
-      "file": "S6",
-      "md5": "c77e4b84f84ca3760bdebc2a116a06e1"
-    },
-    {
-      "file": "S7",
-      "md5": "8bacbf8e9fabb9e1f6db0e135593a4db"
-    },
-    {
-      "file": "S8",
-      "md5": "e40a31672d8c486c4f51eed8098d73af"
-    },
-    {
-      "file": "S9",
-      "md5": "57f122e89a47ba6dd6d4d889a869479f"
-    }
-  ]
+    "processingUnit": "directory",
+    "cacheFile": "./cache/2d-decompressed-segments-mat-gt-bb.json",
+    "state": "DONE",
+    "directory": "/data/h36m/2d-decompressed-segments-mat-gt-bb",
+    "fileList": [
+        {
+            "file": "S1",
+            "md5": "2bac2d09e8395975a212e2a7dd3c0486"
+        },
+        {
+            "file": "S11",
+            "md5": "0e24da1889446aefe0ff950765012f08"
+        },
+        {
+            "file": "S2",
+            "md5": "3e5d6c9bf55089bcdb5386b20545e918"
+        },
+        {
+            "file": "S3",
+            "md5": "0afc4a7e53a886413393ece4ee8f556a"
+        },
+        {
+            "file": "S4",
+            "md5": "975ff4368343b28aff6ad56b525c0ddb"
+        },
+        {
+            "file": "S5",
+            "md5": "6d4bf2003183376e8e5dbc73a092f654"
+        },
+        {
+            "file": "S6",
+            "md5": "c77e4b84f84ca3760bdebc2a116a06e1"
+        },
+        {
+            "file": "S7",
+            "md5": "8bacbf8e9fabb9e1f6db0e135593a4db"
+        },
+        {
+            "file": "S8",
+            "md5": "e40a31672d8c486c4f51eed8098d73af"
+        },
+        {
+            "file": "S9",
+            "md5": "57f122e89a47ba6dd6d4d889a869479f"
+        }
+    ],
+    "samples": [
+        "S1/MySegmentsMat/ground_truth_bb/Directions 1.54138969.cdf",
+        "S1/MySegmentsMat/ground_truth_bb/Directions 1.55011271.cdf",
+        "S1/MySegmentsMat/ground_truth_bb/Directions 1.58860488.cdf",
+        "S1/MySegmentsMat/ground_truth_bb/Directions 1.60457274.cdf"
+    ]
 }

@@ -1,16 +1,16 @@
-version: "3"
+version: '3'
 
 services:
-  fpena_preprocessing:
-    image: fpena_preprocessing
-    build: .
-    restart: "no"
-    command: npm run start
-    volumes:
-      - h36m:/data/h36m
-      - ./cache:/app/cache
-      - ./logs:/app/logs
+    fpena_preprocessing:
+        image: fpena_preprocessing
+        build: .
+        restart: 'no'
+        command: npm run start
+        volumes:
+            - h36m:/data/h36m
+            - ./cache:/app/cache
+            - ./logs:/app/logs
 
 volumes:
-  h36m:
-    external: true
+    h36m:
+        external: true

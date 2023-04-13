@@ -1,7 +1,7 @@
-version: "3"
+version: '3'
 
 services:
-  fpena_bin_hashdeep:
-    image: fpena_bin_hashdeep
-    user: root
-    build: ./hashdeep
+    fpena_bin_hashdeep:
+        image: fpena_bin_hashdeep
+        user: root
+        build: ./hashdeep

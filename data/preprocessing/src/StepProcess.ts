@@ -13,11 +13,10 @@ export class StepProcess {
 
     async execute(): Promise<boolean> {
         for (const step of this.steps) {
-            await step.execute({redo: false});
+            await step.execute({ redo: false });
             await step.logOuputFiles();
         }
-        const lastStep = this.steps[this.steps.length-1];
+        const lastStep = this.steps[this.steps.length - 1];
         return await lastStep.checkOutputFiles();
     }
-
 }

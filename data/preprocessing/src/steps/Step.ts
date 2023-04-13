@@ -8,43 +8,50 @@ type CacheDataFile = {
     file: string;
     md5: string;
 };
-type CacheDataFormat = {
-    processingUnit: 'file';
-    allowedFileExtensions: string[];
-} | {
-    processingUnit: 'directory';
-    directoryIsAllowed: (directoryPath: string) => Promise<boolean>;
-};
+type CacheDataFormat =
+    | {
+          processingUnit: 'file';
+          allowedFileExtensions: string[];
+      }
+    | {
+          processingUnit: 'directory';
+          directoryIsAllowed: (directoryPath: string) => Promise<boolean>;
+      };
 export type CacheData = {
     state: 'WAITING' | 'DONE' | 'BROKEN';
     cacheFile: string;
     directory: string;
     fileList: CacheDataFile[];
+    samples?: string[];
 } & CacheDataFormat;
 export type DataInfo = {
     cacheFile: string;
     directory: string;
+    samples?: string[];
 } & CacheDataFormat;
 
-export type ExecutionResult = |
-    // Everything went fine
-    'Success' | 
+export type ExecutionResult =
+    | // Everything went fine
+    'Success'
     // Something went wrong
-    'Failure' | 
+    | 'Failure'
     // We need to redo previous step
-    'StepBack';
+    | 'StepBack';
 
 export abstract class AbstractStep {
     public readonly stepName: string;
     protected outputsCache: CacheData[];
 
-    constructor(stepName: string, {
-        outputsInfo, 
-        clearOutputDirectories = false
-    }: {
-        outputsInfo: DataInfo[], 
-        clearOutputDirectories?: boolean
-    }) {
+    constructor(
+        stepName: string,
+        {
+            outputsInfo,
+            clearOutputDirectories = false,
+        }: {
+            outputsInfo: DataInfo[];
+            clearOutputDirectories?: boolean;
+        }
+    ) {
         this.stepName = stepName;
         this.outputsCache = outputsInfo.map(AbstractStep.loadCacheFile);
 
@@ -65,8 +72,8 @@ export abstract class AbstractStep {
      * @param redo Redo step even if the data is valid
      * @returns Status of the processing of all files
      */
-    public abstract execute({redo}: {redo: boolean}): Promise<ExecutionResult>;
-    
+    public abstract execute({ redo }: { redo: boolean }): Promise<ExecutionResult>;
+
     /**
      * Update output caches in memory and disk by manually checking what new
      * files where generated.
@@ -76,48 +83,57 @@ export abstract class AbstractStep {
             const outputCache = this.outputsCache[index];
 
             // Check actual files in output directory
-            const allFileNames: string[] = zx.fs.readdirSync(outputCache.directory).filter(fileName => {
+            const allFileNames: string[] = zx.fs.readdirSync(outputCache.directory).filter((fileName) => {
                 switch (outputCache.processingUnit) {
-                case 'directory':
-                    return outputCache.directoryIsAllowed(zx.path.join(outputCache.directory, fileName));
-                case 'file':
-                    return outputCache.allowedFileExtensions.some(fileExt => fileName.endsWith(fileExt));
+                    case 'directory':
+                        return outputCache.directoryIsAllowed(zx.path.join(outputCache.directory, fileName));
+                    case 'file':
+                        return outputCache.allowedFileExtensions.some((fileExt) => fileName.endsWith(fileExt));
                 }
             });
 
             // Check known files from cache
-            const knownFileNames = outputCache.fileList.map(fileData => fileData.file);
-            assert(knownFileNames.length <= allFileNames.length, 'Cached output files should not disappear from output directorys');
-            assert(knownFileNames.every(fileName => allFileNames.includes(fileName)), 'Cached output files should not disappear from output directory');
+            const knownFileNames = outputCache.fileList.map((fileData) => fileData.file);
+            assert(
+                knownFileNames.length <= allFileNames.length,
+                'Cached output files should not disappear from output directorys'
+            );
+            assert(
+                knownFileNames.every((fileName) => allFileNames.includes(fileName)),
+                'Cached output files should not disappear from output directory'
+            );
 
             // Check new files that are not present in cache yet
-            const newFileNames = allFileNames.filter(fileName => !knownFileNames.includes(fileName));
+            const newFileNames = allFileNames.filter((fileName) => !knownFileNames.includes(fileName));
             for (const fileName of newFileNames) {
                 // Get md5 of new file
                 let fileMD5: string;
-                switch(outputCache.processingUnit) {
-                case 'directory':
-                    fileMD5 = await AbstractStep.getDirectoryMD5(zx.path.join(outputCache.directory, fileName));
-                    break;
-                case 'file':
-                    fileMD5 = await AbstractStep.getFileMD5(zx.path.join(outputCache.directory, fileName));
-                    break;
+                switch (outputCache.processingUnit) {
+                    case 'directory':
+                        fileMD5 = await AbstractStep.getDirectoryMD5(zx.path.join(outputCache.directory, fileName));
+                        break;
+                    case 'file':
+                        fileMD5 = await AbstractStep.getFileMD5(zx.path.join(outputCache.directory, fileName));
+                        break;
                 }
-                
+
                 // Add to cached memory
                 console.log(`Adding output file ${fileName} with md5 ${fileMD5.toString()} to cache`);
                 this.outputsCache[index].fileList.push({
                     file: fileName,
-                    md5: fileMD5.toString()
+                    md5: fileMD5.toString(),
                 });
             }
-            
+
             // Add updated cache to disk
             const jsonData = {
                 ...this.outputsCache[index],
-                directoryIsAllowed: undefined
+                directoryIsAllowed: undefined,
             };
-            zx.fs.writeFileSync(zx.path.join(ROOT_DIR, outputCache.cacheFile), JSON.stringify(jsonData, null, 2) + '\n');
+            zx.fs.writeFileSync(
+                zx.path.join(ROOT_DIR, outputCache.cacheFile),
+                JSON.stringify(jsonData, null, 4) + '\n'
+            );
         }
     }
 
@@ -138,27 +154,30 @@ export abstract class AbstractStep {
      */
     public async checkOutputFiles(): Promise<boolean> {
         for (const outputCache of this.outputsCache) {
-            const fileNames: string[] = zx.fs.readdirSync(outputCache.directory).filter(fileName => {
+            const fileNames: string[] = zx.fs.readdirSync(outputCache.directory).filter((fileName) => {
                 switch (outputCache.processingUnit) {
-                case 'directory':
-                    return outputCache.directoryIsAllowed(zx.path.join(outputCache.directory, fileName));
-                case 'file':
-                    return outputCache.allowedFileExtensions.some(fileExt => fileName.endsWith(fileExt));
+                    case 'directory':
+                        return outputCache.directoryIsAllowed(zx.path.join(outputCache.directory, fileName));
+                    case 'file':
+                        return outputCache.allowedFileExtensions.some((fileExt) => fileName.endsWith(fileExt));
                 }
             });
-            const expectedFileNames = outputCache.fileList.map(fileData => fileData.file);
-            if (fileNames.length !== expectedFileNames.length || !fileNames.every(fileName => expectedFileNames.includes(fileName))) {
+            const expectedFileNames = outputCache.fileList.map((fileData) => fileData.file);
+            if (
+                fileNames.length !== expectedFileNames.length ||
+                !fileNames.every((fileName) => expectedFileNames.includes(fileName))
+            ) {
                 return false;
             }
-            for(const fileData of outputCache.fileList) {
+            for (const fileData of outputCache.fileList) {
                 let currentMD5: string;
-                switch(outputCache.processingUnit) {
-                case 'directory':
-                    currentMD5 = await AbstractStep.getDirectoryMD5(fileData.file);
-                    break;
-                case 'file':
-                    currentMD5 = await AbstractStep.getFileMD5(fileData.file);
-                    break;
+                switch (outputCache.processingUnit) {
+                    case 'directory':
+                        currentMD5 = await AbstractStep.getDirectoryMD5(fileData.file);
+                        break;
+                    case 'file':
+                        currentMD5 = await AbstractStep.getFileMD5(fileData.file);
+                        break;
                 }
                 // If md5 is not the same from the original, we need to redo some work
                 if (currentMD5 !== fileData.md5) {
@@ -181,23 +200,23 @@ export abstract class AbstractStep {
         for (const fileName of files) {
             const filePath = zx.path.join(cacheData.directory, fileName);
             switch (cacheData.processingUnit) {
-            case 'directory':
-                if (await cacheData.directoryIsAllowed(filePath)) {
-                    actualFileQueue.push(fileName);
-                }
-                break;
-            case 'file':
-                if (cacheData.allowedFileExtensions.some(fileExt => fileName.endsWith(fileExt))) {
-                    actualFileQueue.push(fileName);
-                }
-                break;
+                case 'directory':
+                    if (await cacheData.directoryIsAllowed(filePath)) {
+                        actualFileQueue.push(fileName);
+                    }
+                    break;
+                case 'file':
+                    if (cacheData.allowedFileExtensions.some((fileExt) => fileName.endsWith(fileExt))) {
+                        actualFileQueue.push(fileName);
+                    }
+                    break;
             }
         }
 
         // Check that the queue is valid
-        const expectedFileQueue: string[] = cacheData.fileList.map(fileData => fileData.file);
+        const expectedFileQueue: string[] = cacheData.fileList.map((fileData) => fileData.file);
         assert.deepEqual(actualFileQueue, expectedFileQueue);
-        
+
         // Return the file queue
         return actualFileQueue;
     }
@@ -218,7 +237,10 @@ export abstract class AbstractStep {
      * @returns md5 string
      */
     protected static async getDirectoryMD5(directoryPath: string): Promise<string> {
-        const output: string = spawnSync('sh', ['-c', `md5deep -r -l ${directoryPath} | sort | md5sum | awk '{ print $1 }'`]).stdout.toString();
+        const output: string = spawnSync('sh', [
+            '-c',
+            `md5deep -r -l ${directoryPath} | sort | md5sum | awk '{ print $1 }'`,
+        ]).stdout.toString();
         return output.toString().trim();
     }
 
@@ -235,18 +257,18 @@ export abstract class AbstractStep {
             console.log(`Could not find cache file ${cacheFilePath}`);
             let cacheDataFormat: CacheDataFormat;
             switch (dataInfo.processingUnit) {
-            case 'directory':
-                cacheDataFormat = {
-                    processingUnit: 'directory',
-                    directoryIsAllowed: dataInfo.directoryIsAllowed
-                };
-                break;
-            case 'file':
-                cacheDataFormat = {
-                    processingUnit: 'file',
-                    allowedFileExtensions: dataInfo.allowedFileExtensions
-                };
-                break;
+                case 'directory':
+                    cacheDataFormat = {
+                        processingUnit: 'directory',
+                        directoryIsAllowed: dataInfo.directoryIsAllowed,
+                    };
+                    break;
+                case 'file':
+                    cacheDataFormat = {
+                        processingUnit: 'file',
+                        allowedFileExtensions: dataInfo.allowedFileExtensions,
+                    };
+                    break;
             }
 
             const cacheData: CacheData = {
@@ -254,16 +276,17 @@ export abstract class AbstractStep {
                 cacheFile: dataInfo.cacheFile,
                 state: 'WAITING',
                 directory: dataInfo.directory,
-                
+
                 fileList: [],
+                samples: dataInfo.samples,
             };
             console.log(`Writing basic cache template for ${cacheFilePath}`);
             const jsonData = {
                 ...cacheData,
                 // Remove functions
-                directoryIsAllowed: undefined
+                directoryIsAllowed: undefined,
             };
-            zx.fs.writeFileSync(cacheFilePath, JSON.stringify(jsonData, null, 2) + '\n');
+            zx.fs.writeFileSync(cacheFilePath, JSON.stringify(jsonData, null, 4) + '\n');
         }
 
         // Create data directory in case it doesn't exist
@@ -274,15 +297,15 @@ export abstract class AbstractStep {
         // Read existent cache file
         const cacheRawData = zx.fs.readFileSync(cacheFilePath).toString();
         const cacheData = JSON.parse(cacheRawData) as CacheData;
-        switch(dataInfo.processingUnit) {
-        case 'directory':
-            assert(cacheData.processingUnit === 'directory');
-            cacheData.directoryIsAllowed = dataInfo.directoryIsAllowed;
-            break;
-        case 'file':
-            assert(cacheData.processingUnit === 'file');
-            cacheData.allowedFileExtensions = dataInfo.allowedFileExtensions;
-            break;
+        switch (dataInfo.processingUnit) {
+            case 'directory':
+                assert(cacheData.processingUnit === 'directory');
+                cacheData.directoryIsAllowed = dataInfo.directoryIsAllowed;
+                break;
+            case 'file':
+                assert(cacheData.processingUnit === 'file');
+                cacheData.allowedFileExtensions = dataInfo.allowedFileExtensions;
+                break;
         }
         return cacheData;
     }
@@ -291,16 +314,19 @@ export abstract class AbstractStep {
 export abstract class SingleInputStep extends AbstractStep {
     protected inputCache: CacheData;
 
-    constructor(stepName: string, {
-        inputInfo,
-        outputsInfo,
-        clearOutputDirectories = false
-    }: {
-        inputInfo: DataInfo,
-        outputsInfo: DataInfo[],
-        clearOutputDirectories?: boolean
-    }) {
-        super(stepName, {outputsInfo, clearOutputDirectories});
+    constructor(
+        stepName: string,
+        {
+            inputInfo,
+            outputsInfo,
+            clearOutputDirectories = false,
+        }: {
+            inputInfo: DataInfo;
+            outputsInfo: DataInfo[];
+            clearOutputDirectories?: boolean;
+        }
+    ) {
+        super(stepName, { outputsInfo, clearOutputDirectories });
         this.inputCache = AbstractStep.loadCacheFile(inputInfo);
     }
 
@@ -327,8 +353,8 @@ export abstract class SingleInputStep extends AbstractStep {
      * @param redo Redo step even if the data is valid
      * @returns Status of the processing of all files
      */
-    public async execute({redo}: {redo: boolean}): Promise<ExecutionResult> {
-        const allOutputsAreDone = this.outputsCache.every(outputCache => outputCache.state === 'DONE');
+    public async execute({ redo }: { redo: boolean }): Promise<ExecutionResult> {
+        const allOutputsAreDone = this.outputsCache.every((outputCache) => outputCache.state === 'DONE');
         if (allOutputsAreDone && !redo) {
             // Assume nothing to do unless next step says otherwise
             return 'Success';
@@ -339,7 +365,9 @@ export abstract class SingleInputStep extends AbstractStep {
 
         // Start processing all files
         for (const fileName of fileQueue) {
-            const result: ExecutionResult = await this.processInputUnit(zx.path.join(this.inputCache.directory, fileName));
+            const result: ExecutionResult = await this.processInputUnit(
+                zx.path.join(this.inputCache.directory, fileName)
+            );
             if (result !== 'Success') {
                 return result;
             }
@@ -367,16 +395,19 @@ export abstract class SingleInputStep extends AbstractStep {
 export abstract class MultiInputStep<TInputType = string[], TNextInput = unknown> extends AbstractStep {
     protected inputsCache: CacheData[];
 
-    constructor(stepName: string, {
-        inputsInfo,
-        outputsInfo,
-        clearOutputDirectories = false
-    }: {
-        inputsInfo: DataInfo[], 
-        outputsInfo: DataInfo[],
-        clearOutputDirectories?: boolean
-    }) {
-        super(stepName, {outputsInfo, clearOutputDirectories});
+    constructor(
+        stepName: string,
+        {
+            inputsInfo,
+            outputsInfo,
+            clearOutputDirectories = false,
+        }: {
+            inputsInfo: DataInfo[];
+            outputsInfo: DataInfo[];
+            clearOutputDirectories?: boolean;
+        }
+    ) {
+        super(stepName, { outputsInfo, clearOutputDirectories });
         this.inputsCache = inputsInfo.map(AbstractStep.loadCacheFile);
     }
 
@@ -393,7 +424,7 @@ export abstract class MultiInputStep<TInputType = string[], TNextInput = unknown
      * @returns An object with the status and the nextGeneratorParameter if required.
      */
     protected abstract processInputUnit(input: TInputType): Promise<{
-        status: ExecutionResult,
+        status: ExecutionResult;
         nextGeneratorParameter?: TNextInput;
     }>;
 
@@ -403,8 +434,8 @@ export abstract class MultiInputStep<TInputType = string[], TNextInput = unknown
      * @param redo Redo step even if the data is valid
      * @returns Status of the processing of all files
      */
-    public async execute({redo}: {redo: boolean}): Promise<ExecutionResult> {
-        const allOutputsAreDone = this.outputsCache.every(outputCache => outputCache.state === 'DONE');
+    public async execute({ redo }: { redo: boolean }): Promise<ExecutionResult> {
+        const allOutputsAreDone = this.outputsCache.every((outputCache) => outputCache.state === 'DONE');
         if (allOutputsAreDone && !redo) {
             // Assume nothing to do unless next step says otherwise
             return 'Success';
@@ -416,7 +447,7 @@ export abstract class MultiInputStep<TInputType = string[], TNextInput = unknown
         // Start processing each zipped input
         const inputIterator = this.zipInputs();
         let inputCurrent = inputIterator.next(undefined); // Use undefined for first yield
-        while(!inputCurrent.done) {
+        while (!inputCurrent.done) {
             // Process zipped input
             const result = await this.processInputUnit(inputCurrent.value);
             if (result.status !== 'Success') {
@@ -439,5 +470,4 @@ export abstract class MultiInputStep<TInputType = string[], TNextInput = unknown
         // Return success
         return 'Success';
     }
-
 }

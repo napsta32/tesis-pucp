@@ -1,0 +1,2 @@
+# Ignore jsonc files unsupported by prettier
+tsconfig.json
