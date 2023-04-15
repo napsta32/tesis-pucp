@@ -46,9 +46,9 @@
         }
     ],
     "samples": [
-        "S1/MySegmentsMat/ground_truth_bb/Directions 1.54138969.cdf",
-        "S1/MySegmentsMat/ground_truth_bb/Directions 1.55011271.cdf",
-        "S1/MySegmentsMat/ground_truth_bb/Directions 1.58860488.cdf",
-        "S1/MySegmentsMat/ground_truth_bb/Directions 1.60457274.cdf"
+        "S1/MySegmentsMat/ground_truth_bb/Directions 1.54138969.mat",
+        "S1/MySegmentsMat/ground_truth_bb/Directions 1.55011271.mat",
+        "S1/MySegmentsMat/ground_truth_bb/Directions 1.58860488.mat",
+        "S1/MySegmentsMat/ground_truth_bb/Directions 1.60457274.mat"
     ]
 }
