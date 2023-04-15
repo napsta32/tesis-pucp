@@ -188,6 +188,27 @@ export abstract class AbstractStep {
         return true;
     }
 
+    public async captureSamples(): Promise<void> {
+        for (const outputCache of this.outputsCache) {
+            if (!outputCache.samples) {
+                continue;
+            }
+
+            for (const sampleRelativePath of outputCache.samples) {
+                const samplePath = zx.path.join(outputCache.directory, sampleRelativePath);
+                const sampleDestPath = zx.path.join(
+                    ROOT_DIR,
+                    'samples',
+                    zx.path.basename(outputCache.directory),
+                    sampleRelativePath
+                );
+
+                zx.fs.mkdirpSync(zx.path.dirname(sampleDestPath));
+                zx.fs.copyFileSync(samplePath, sampleDestPath);
+            }
+        }
+    }
+
     /**
      * Generate an input file queue by checking what files are present in the cache
      * @param cacheData Cache that contains the input information

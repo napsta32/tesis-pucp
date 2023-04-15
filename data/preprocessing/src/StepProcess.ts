@@ -15,6 +15,7 @@ export class StepProcess {
         for (const step of this.steps) {
             await step.execute({ redo: false });
             await step.logOuputFiles();
+            await step.captureSamples();
         }
         const lastStep = this.steps[this.steps.length - 1];
         return await lastStep.checkOutputFiles();

@@ -1,6 +1,5 @@
 import { DataInfo } from './Step';
 
-// 1
 export default {
     group1: {
         compressedData: {
